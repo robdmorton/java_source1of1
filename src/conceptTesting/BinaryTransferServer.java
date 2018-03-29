@@ -2136,7 +2136,6 @@ public class BinaryTransferServer {
 //    aBinXfrSvc.testJNIJNA();//QQQ - am normally running this test...
     HelloJNI.mainJNICall(3,"-tab2space","2","inputTestFile-JNI.txt");
 
-
     // SAX Parser Test
     //		aBinXfrSvc.XMLParseTest();
 
