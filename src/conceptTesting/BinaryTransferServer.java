@@ -2072,7 +2072,7 @@ public class BinaryTransferServer {
         + " thread...");
 
     // thread pool interruption stuff...
-    aBinXfrSvc.testSocketListenerThreadCancellations();//QQQ - this test is used for socket manipulation
+//    aBinXfrSvc.testSocketListenerThreadCancellations();//QQQ - this test is used for socket manipulation
 //    		 aBinXfrSvc.testBasicThreadCancellations();
 //    		 aBinXfrSvc.testFileReadThreadCancellations();
 //    		 aBinXfrSvc.testFileWriteThreadCancellations();
@@ -2106,7 +2106,7 @@ public class BinaryTransferServer {
     //		 aBinXfrSvc.testGenerics();
 
     // closures/"funcptr" and lambda expressions test (JSE8)\
-    aBinXfrSvc.testClosuresAndLambdaExpressions();
+//    aBinXfrSvc.testClosuresAndLambdaExpressions();
 
     // static variable initialization java - done only once when class is loaded
     //		 aBinXfrSvc.testStaticVariableInitialization();
@@ -2133,7 +2133,9 @@ public class BinaryTransferServer {
     //		 HelloJNI.mainJNICall(null);
     // String[] argv = {"-tab2space", "2", "inputTestFile-JNI.txt"};
     //		 HelloJNI.mainJNICall(3,"-tab2space","2","inputTestFile-JNI.txt");
-    aBinXfrSvc.testJNIJNA();//QQQ - am normally running this test...
+//    aBinXfrSvc.testJNIJNA();//QQQ - am normally running this test...
+    HelloJNI.mainJNICall(3,"-tab2space","2","inputTestFile-JNI.txt");
+
 
     // SAX Parser Test
     //		aBinXfrSvc.XMLParseTest();

@@ -6,6 +6,6 @@
 	<classpathentry kind="lib" path="jna/jna-3.2.4.jar"/>
 	<classpathentry kind="lib" path="GuavaRatelimiter/guava-15.0-rc1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="F:/Dropbox/java/java_source1of1/ttjdbc/ttjdbc6.jar"/>
+	<classpathentry kind="lib" path="F:/Dropbox/eclipseWorkspace/java_source1of1/ttjdbc/ttjdbc6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
