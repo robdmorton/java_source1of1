@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sales xmlns="http://www.skilltop.com/cst6445/Lab3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.skilltop.com/cst6445/Lab3 sales.xsd">
+	<customer>
+		<details>
+			<first>John</first>
+			<last>Smith</last>
+			<email>jsmith@xyz.ca</email>
+			<custid>424242</custid>
+		</details>
+		<purchases>
+			<purchase>
+				<item>Foo</item>
+				<description>A foo for all occasion.</description>
+				<cost>6.45</cost>
+			</purchase>
+			<purchase>
+				<item>Bar</item>
+				<description>Bar none!</description>
+				<cost>10.88</cost>
+			</purchase>
+		</purchases>
+	</customer>
+	<customer>
+		<details>
+			<first>Fred</first>
+			<last>Flintstone</last>
+			<email>fred@storm.ca</email>
+			<custid>100362</custid>
+		</details>
+		<purchases>
+			<purchase>
+				<item>Frobnotz</item>
+				<description>I dont know what this is.</description>
+				<cost>9.99</cost>
+			</purchase>
+		</purchases>
+	</customer>
+</sales>

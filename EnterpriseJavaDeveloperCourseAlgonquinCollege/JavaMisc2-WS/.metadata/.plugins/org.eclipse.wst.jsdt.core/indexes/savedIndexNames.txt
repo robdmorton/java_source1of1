@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+D:\rob\sandboxes\JavaMisc2-WS\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1804321605.index
+767602770.index
+3463437482.index
+2094053382.index
+87111012.index

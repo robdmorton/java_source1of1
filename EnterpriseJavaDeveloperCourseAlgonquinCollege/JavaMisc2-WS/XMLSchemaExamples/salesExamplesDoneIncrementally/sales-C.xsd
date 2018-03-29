@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:p="http://www.skilltop.com/cst6445/Lab3-C"
+	targetNamespace="http://www.skilltop.com/cst6445/Lab3-C"
+	elementFormDefault="qualified">
+
+	<element name="sales" type="p:SalesType" />
+
+	<complexType name="SalesType">
+		<sequence>
+			<element name="customer" type="p:CustomerPurchasesType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	
+	<!-- In this pass we changed the type for purchases from
+		 string to a complexType.
+		 In this example the complexType is defined "in-line".
+		 The leaf element purchase is defined as a string.
+		 In later passes it can be redefined as appropriate.
+	-->	
+	
+	<complexType name="CustomerPurchasesType">
+		<sequence>
+			<element name="details" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="purchases"  minOccurs="0" maxOccurs="1">
+			
+				<complexType>
+					<sequence>
+						<element name="purchase" type="string"
+							minOccurs="1" maxOccurs="unbounded" />
+					</sequence>
+				</complexType>
+				
+			</element>
+		</sequence>
+	</complexType>
+	
+	
+		
+</schema>

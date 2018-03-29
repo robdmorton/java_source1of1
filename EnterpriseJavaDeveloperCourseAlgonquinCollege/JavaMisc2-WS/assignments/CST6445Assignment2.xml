@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE subscriber [
+<!ELEMENT subscriber (id,policy?,subscriptionstartdate,locations)>
+<!ATTLIST subscriber type CDATA #IMPLIED>
+<!ELEMENT   id (imsi|other1|other2)>
+<!ELEMENT     imsi (#PCDATA)>
+<!ELEMENT     other1 (#PCDATA)>
+<!ELEMENT     other2 (#PCDATA)>
+<!ELEMENT   policy (#PCDATA)>
+<!ELEMENT   subscriptionstartdate (#PCDATA)>
+<!ELEMENT   locations (location+)>
+<!ELEMENT     location (logical,physical)>
+<!ELEMENT       logical (#PCDATA)>
+<!ELEMENT       physical (streetaddress,city,stateorprov?,code)>
+<!ELEMENT         streetaddress (#PCDATA)>
+<!ELEMENT         city (#PCDATA)>
+<!ELEMENT         stateorprov (#PCDATA)>
+<!ELEMENT         code (#PCDATA)>
+<!ATTLIST         code country CDATA #REQUIRED>
+]>
+<!--
+
+ASSIGNMENT #2
+
+Author: Rob Morton (includes original assignment #1 XML code)
+Date:   2011-11-17 
+
+A subscriber is a business object which represents and end user of the 'system'
+
+Subscribers are identified by their ID which can be one or more of three things: IMSI,other1 and other2.
+They contain information regaring the policy applied to the subscriber by the 'system' as well as the location(s)
+of the given subscriber
+-->
+<ns1:subscriber 
+	type='internal'
+	xmlns:ns1="http://alu"> 
+	<ns1:id>
+		<ns1:imsi>1234567890</ns1:imsi>
+	</ns1:id>
+	<subscriptionstartdate>2011-11-10</subscriptionstartdate>
+	<locations>
+		<location>
+			<logical>cct1234567890</logical>
+			<physical>
+				<streetaddress>123 abc str</streetaddress>
+				<city>abc</city>
+				<stateorprov>blah</stateorprov>
+				<code country='CA'>k3j 2g5</code>
+			</physical>
+		</location>
+		<location>
+			<logical>cct1234567891</logical>
+			<physical>
+				<streetaddress>456 abc str</streetaddress>
+				<city>def</city>
+				<code country='US'>12345</code>
+			</physical>
+		</location>
+	</locations>
+</ns1:subscriber>

@@ -1,0 +1,150 @@
+Listening for transport dt_socket at address: 1044
+G:\eclipsePortable\Data\workspace\LearningJava:
+                        .project       file   388       March 18, 2011
+                             src  directory     0       March 18, 2011
+
+src:
+                         sockets  directory     0       March 18, 2011
+
+sockets:
+                 BartClient.java       file  1568         May 15, 2010
+                  BartQuote.java       file  1175       April 20, 2010
+                BartServer2.java       file  1772    February 13, 2011
+     intermediateJavaProgramming  directory     0       March 18, 2011
+
+intermediateJavaProgramming:
+                            lab6  directory     0       March 18, 2011
+
+lab6:
+                       Lab6.java       file    71       March 17, 2011
+                            lab5  directory     0       March 18, 2011
+
+lab5:
+                       Lab5.java       file    71       March 17, 2011
+                            lab4  directory     0       March 18, 2011
+
+lab4:
+                       Lab4.java       file    71       March 17, 2011
+                            lab3  directory     0       March 18, 2011
+
+lab3:
+                       Lab3.java       file    73       March 19, 2011
+                            lab2  directory     0       March 18, 2011
+
+lab2:
+                       Lab2.java       file   403       March 18, 2011
+                        Dir.java       file  1968       March 19, 2011
+                    ReadURL.java       file  1046       March 17, 2011
+                Concatenate.java       file  2213       March 19, 2011
+               FileCopyByte.java       file   978       March 17, 2011
+                 DataIODemo.java       file  2051       March 17, 2011
+               FileCopyChar.java       file   956       March 17, 2011
+                  ReadInput.java       file   443       March 17, 2011
+                            lab1  directory     0       March 18, 2011
+
+lab1:
+                       Lab1.java       file   637       March 17, 2011
+     ArgumentCountException.java       file   224       March 17, 2011
+                VerifyLogin.java       file   333       March 17, 2011
+                       introJava  directory     0       March 18, 2011
+
+introJava:
+              IntroJavaTest.java       file  5152       March 18, 2011
+                  Container.java       file   284       March 17, 2011
+                     Worker.java       file   120       March 17, 2011
+                  ScopeTest.java       file   130       March 17, 2011
+                     Person.java       file   369       March 17, 2011
+                      MyGUI.java       file  1570       March 17, 2011
+               GenericFruit.java       file   258       March 17, 2011
+                     Orange.java       file   294       March 17, 2011
+                     Tester.java       file   420       March 17, 2011
+               DaysInAMonth.java       file  1042       March 19, 2011
+                 HelloWorld.java       file   239       March 18, 2011
+                  HelloApp2.java       file   372       March 18, 2011
+                    Greeter.java       file   392       March 18, 2011
+                   HelloApp.java       file   186       March 18, 2011
+                  HelloApp3.java       file   581       March 18, 2011
+                 HelloSayer.java       file   814       March 18, 2011
+                             bin  directory     0       March 18, 2011
+
+bin:
+                         sockets  directory     0       March 19, 2011
+
+sockets:
+               BartServer2.class       file  1596       March 19, 2011
+                BartThread.class       file  2061       March 19, 2011
+                 BartQuote.class       file  1766       March 19, 2011
+                BartClient.class       file  2524       March 19, 2011
+     intermediateJavaProgramming  directory     0       March 19, 2011
+
+intermediateJavaProgramming:
+                            lab6  directory     0       March 19, 2011
+
+lab6:
+                      Lab6.class       file   303       March 19, 2011
+                            lab5  directory     0       March 19, 2011
+
+lab5:
+                      Lab5.class       file   303       March 19, 2011
+                            lab4  directory     0       March 19, 2011
+
+lab4:
+                      Lab4.class       file   303       March 19, 2011
+                            lab3  directory     0       March 19, 2011
+
+lab3:
+                      Lab3.class       file   303       March 19, 2011
+                            lab2  directory     0       March 19, 2011
+
+lab2:
+                   ReadURL.class       file  1619       March 19, 2011
+                 ReadInput.class       file  1115       March 19, 2011
+                      Lab2.class       file   971       March 19, 2011
+              FileCopyChar.class       file  1317       March 19, 2011
+              FileCopyByte.class       file  1335       March 19, 2011
+                       Dir.class       file  2459       March 19, 2011
+                DataIODemo.class       file  2627       March 19, 2011
+               Concatenate.class       file  2728       March 19, 2011
+                            lab1  directory     0       March 19, 2011
+
+lab1:
+               VerifyLogin.class       file   748       March 19, 2011
+                      Lab1.class       file  1259       March 19, 2011
+    ArgumentCountException.class       file   491       March 19, 2011
+                       introJava  directory     0       March 19, 2011
+
+introJava:
+                    Worker.class       file   351       March 19, 2011
+                    Tester.class       file  1330       March 19, 2011
+                 ScopeTest.class       file   404       March 19, 2011
+                    Person.class       file   832       March 19, 2011
+                    Orange.class       file   603       March 19, 2011
+                     MyGUI.class       file  2083       March 19, 2011
+                   MyGUI$2.class       file  1052       March 19, 2011
+                   MyGUI$1.class       file   797       March 19, 2011
+             IntroJavaTest.class       file  5781       March 19, 2011
+                HelloWorld.class       file   610       March 19, 2011
+                HelloSayer.class       file   986       March 19, 2011
+                 HelloApp3.class       file   687       March 19, 2011
+                 HelloApp2.class       file   607       March 19, 2011
+                  HelloApp.class       file   605       March 19, 2011
+                   Greeter.class       file   565       March 19, 2011
+              GenericFruit.class       file   552       March 19, 2011
+              DaysInAMonth.class       file  1066       March 19, 2011
+                 Container.class       file   995       March 19, 2011
+                      .classpath       file   318       March 19, 2011
+                       .settings  directory     0       March 18, 2011
+
+.settings:
+      org.eclipse.jdt.core.prefs       file   629       March 18, 2011
+       EclipsePortable-E.exe.lnk       file   769       March 19, 2011
+                      xanadu.txt       file    17    February 20, 2011
+                file_to_copy.txt       file    38       March 17, 2011
+                      myJava.bat       file   843       March 19, 2011
+             characteroutput.txt       file    19       March 18, 2011
+                    outagain.txt       file    17    February 22, 2011
+                   skilltop.html       file  3818       March 16, 2011
+                copy_of_file.txt       file    38       March 17, 2011
+       EclipsePortable-J.exe.lnk       file   767       March 19, 2011
+                        temp.txt       file  7740       March 19, 2011
+       EclipsePortable-G.exe.lnk       file   485       March 19, 2011

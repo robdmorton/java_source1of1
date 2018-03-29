@@ -1,0 +1,251 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226562281
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226562453
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226570031
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226595218
+error,log,,,"Could not resolve the node to a handle",1321226595828
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226595843
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226600734
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226602046
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226603031
+error,log,,,"Could not resolve the node to a handle",1321226603578
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226603593
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226606218
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226607843
+activated,editor,org.eclipse.wst.xsd.ui,1.2.404.v201105050216,"org.eclipse.wst.xsd.ui.internal.editor.InternalXSDMultiPageEditor",1321226608031
+error,log,,,"Could not resolve the node to a handle",1321226608578
+error,log,,,"Could not resolve the node to a handle",1321226608578
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226608593
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226608734
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226608781
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226608937
+error,log,,,"Could not resolve the node to a handle",1321226609484
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226611468
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226611609
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226613265
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226614937
+error,log,,,"Could not resolve the node to a handle",1321226615484
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226615500
+executed,command,,,"AUTOGEN:::org.eclipse.core.runtime.xml.source.ruler.actions/org.eclipse.ui.texteditor.SelectRulerAction",1321226615765
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226622671
+activated,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ProblemView",1321226625421
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226631968
+error,log,,,"Could not resolve the node to a handle",1321226633828
+error,log,,,"Could not resolve the node to a handle",1321226633828
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226633843
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226646859
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226670640
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226674812
+error,log,,,"Could not resolve the node to a handle",1321226677140
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226677140
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226680671
+opened,view,org.eclipse.help.ui,3.5.101.r37_20110819,"org.eclipse.help.ui.HelpView",1321226683500
+activated,view,org.eclipse.help.ui,3.5.101.r37_20110819,"org.eclipse.help.ui.HelpView",1321226683609
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.help.helpSearch",1321226683750
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226740109
+closed,view,org.eclipse.help.ui,3.5.101.r37_20110819,"org.eclipse.help.ui.HelpView",1321226740125
+error,log,,,"Could not resolve the node to a handle",1321226740656
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226740656
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226742078
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1321226746265
+error,log,,,"Could not resolve the node to a handle",1321226746812
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226746828
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226748343
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226784921
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226802437
+error,log,,,"Could not resolve the node to a handle",1321226803671
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226803687
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226803734
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226807718
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226809234
+error,log,,,"Could not resolve the node to a handle",1321226817500
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226817515
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226819453
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226824015
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226825906
+error,log,,,"Could not resolve the node to a handle",1321226826437
+error,log,,,"Could not resolve the node to a handle",1321226826437
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226826453
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226829000
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226833703
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226905109
+activated,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ResourceNavigator",1321226908531
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226910625
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226913296
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226914796
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226918125
+error,log,,,"Could not resolve the node to a handle",1321226918671
+error,log,,,"Could not resolve the node to a handle",1321226918671
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226918671
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226921093
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226922953
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226925031
+closed,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226928375
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226928390
+executed,command,org.eclipse.ltk.ui.refactoring,3.6.0.v20110505-0800,"org.eclipse.ltk.ui.refactoring.commands.deleteResources",1321226928421
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.delete",1321226928421
+started,bundle,org.eclipse.jdt.debug,3.7.1.v20110802_r371,"org.eclipse.jdt.debug",1321226930843
+started,bundle,org.eclipse.jdt.debug.ui,3.6.1.v20110803_r371,"org.eclipse.jdt.debug.ui",1321226931031
+activated,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1321226931078
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226932468
+closed,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1321226932484
+opened,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1321226933265
+activated,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1321226933437
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226933953
+closed,editor,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.CompilationUnitEditor",1321226933968
+activated,editor,org.eclipse.wst.xsd.ui,1.2.404.v201105050216,"org.eclipse.wst.xsd.ui.internal.editor.InternalXSDMultiPageEditor",1321226935437
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226936046
+activated,editor,org.eclipse.wst.xsd.ui,1.2.404.v201105050216,"org.eclipse.wst.xsd.ui.internal.editor.InternalXSDMultiPageEditor",1321226936906
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226939156
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226946609
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1321226963453
+opened,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226967671
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321226967703
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226967765
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226973484
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226973484
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226973578
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226980546
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.paste",1321226985687
+error,log,,,"Could not resolve the node to a handle",1321226989500
+error,log,,,"Could not resolve the node to a handle",1321226989500
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226989515
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321226996406
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321226998609
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227001062
+error,log,,,"Could not resolve the node to a handle",1321227001609
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227001625
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227004359
+activated,perspective,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.JavaPerspective",1321227005828
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1321227011281
+error,log,,,"Could not resolve the node to a handle",1321227011812
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227011828
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227013093
+activated,perspective,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.perspective",1321227015984
+closed,view,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.PackageExplorer",1321227016031
+closed,view,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.SourceView",1321227016046
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.window.closePerspective",1321227016046
+activated,perspective,org.eclipse.jst.j2ee.ui,1.1.501.v201108231700,"org.eclipse.jst.j2ee.J2EEPerspective",1321227016906
+activated,perspective,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.perspective",1321227018578
+closed,view,org.eclipse.wst.server.ui,1.1.306.v20110823_1704,"org.eclipse.wst.server.ui.ServersView",1321227018640
+closed,view,org.eclipse.jdt.ui,3.7.1.r371_v20110824-0800,"org.eclipse.jdt.ui.JavadocView",1321227018640
+closed,view,org.eclipse.mylyn.tasks.ui,3.6.2.v20110826-0100,"org.eclipse.mylyn.tasks.ui.views.tasks",1321227018656
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.window.closePerspective",1321227018671
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227020578
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227020750
+error,log,,,"Could not resolve the node to a handle",1321227021296
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227021312
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227180718
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227182890
+closed,editor,org.eclipse.wst.xsd.ui,1.2.404.v201105050216,"org.eclipse.wst.xsd.ui.internal.editor.InternalXSDMultiPageEditor",1321227182890
+closed,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227182890
+closed,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227182906
+closed,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227182984
+closed,view,org.eclipse.ui.views,3.6.0.I20110412-0800,"org.eclipse.ui.views.ContentOutline",1321227183000
+closed,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ResourceNavigator",1321227183000
+closed,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ProblemView",1321227183000
+closed,view,org.eclipse.ui.views,3.6.0.I20110412-0800,"org.eclipse.ui.views.PropertySheet",1321227183015
+closed,view,org.eclipse.wst.xml.xpath.ui,1.1.100.v201105030025,"org.eclipse.wst.xml.views.XPathView",1321227183015
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.window.closePerspective",1321227183031
+activated,perspective,org.eclipse.jst.j2ee.ui,1.1.501.v201108231700,"org.eclipse.jst.j2ee.J2EEPerspective",1321227188968
+activated,perspective,org.eclipse.jst.j2ee.ui,1.1.501.v201108231700,"org.eclipse.jst.j2ee.J2EEPerspective",1321227188984
+opened,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227189015
+opened,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.AllMarkersView",1321227189046
+opened,view,org.eclipse.ui.views,3.6.0.I20110412-0800,"org.eclipse.ui.views.ContentOutline",1321227189078
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227189125
+activated,perspective,org.eclipse.jst.j2ee.ui,1.1.501.v201108231700,"org.eclipse.jst.j2ee.J2EEPerspective",1321227189140
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.perspectives.showPerspective",1321227189250
+opened,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227192968
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227193046
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227194281
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227195734
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227198031
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227199390
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227207218
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227208281
+opened,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ProblemView",1321227208343
+opened,view,org.eclipse.wst.xml.xpath.ui,1.1.100.v201105030025,"org.eclipse.wst.xml.views.XPathView",1321227208390
+activated,perspective,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.perspective",1321227208406
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.perspectives.showPerspective",1321227208468
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.perspectives.showPerspective",1321227208468
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227210406
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227210593
+error,log,,,"Could not resolve the node to a handle",1321227211140
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227211156
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227212734
+activated,view,org.eclipse.ui.views,3.6.0.I20110412-0800,"org.eclipse.ui.views.ContentOutline",1321227214578
+activated,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ProblemView",1321227234609
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227236937
+opened,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227237171
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227237218
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227237828
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227240812
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227244062
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227248031
+executed,command,,,"AUTOGEN:::org.eclipse.core.runtime.xml.source.ruler.actions/org.eclipse.ui.texteditor.SelectRulerAction",1321227248796
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227250843
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227251031
+error,log,,,"Could not resolve the node to a handle",1321227251578
+error,log,,,"Could not resolve the node to a handle",1321227251578
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227251593
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227251703
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227251796
+activated,perspective,org.eclipse.jst.j2ee.ui,1.1.501.v201108231700,"org.eclipse.jst.j2ee.J2EEPerspective",1321227254703
+closed,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ProblemView",1321227254765
+closed,view,org.eclipse.wst.xml.xpath.ui,1.1.100.v201105030025,"org.eclipse.wst.xml.views.XPathView",1321227254765
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.window.closePerspective",1321227254765
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227255437
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227255546
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227258687
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227262015
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227263968
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227266218
+activated,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.AllMarkersView",1321227267500
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227283453
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227285125
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227319328
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227321984
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227926375
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227929625
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227932593
+executed,command,org.eclipse.ltk.ui.refactoring,3.6.0.v20110505-0800,"org.eclipse.ltk.ui.refactoring.commands.renameResource",1321227932609
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.rename",1321227932609
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227934296
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227938453
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227939484
+opened,view,org.eclipse.ui.ide,3.7.0.v20110809-1737,"org.eclipse.ui.views.ProblemView",1321227939546
+error,log,,,"Unable to create view ID org.eclipse.wst.xml.views.XPathView: An unexpected exception was thrown.",1321227939578
+opened,view,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.wst.xml.views.XPathView",1321227939609
+activated,perspective,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.perspective",1321227939640
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.perspectives.showPerspective",1321227939687
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.perspectives.showPerspective",1321227939687
+activated,view,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.wst.xml.views.XPathView",1321227943546
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227948734
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321227948921
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321227953000
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227954703
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227955750
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321227960359
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321228626281
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321228636859
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321228640718
+executed,command,org.eclipse.ltk.ui.refactoring,3.6.0.v20110505-0800,"org.eclipse.ltk.ui.refactoring.commands.renameResource",1321228640734
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.rename",1321228640734
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321228643140
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321228643578
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321228649062
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321229092625
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321229094234
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1321229102703
+executed,command,,,"AUTOGEN:::org.eclipse.core.runtime.xml.source.ruler.actions/org.eclipse.ui.texteditor.SelectRulerAction",1321229104656
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321229123734
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321229252421
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321229269312
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1321229271609
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321229273390
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321229274187
+closed,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1321229274281
+stopped,bundle,org.eclipse.jst.ws.axis.creation.ui,1.0.700.v201104070312,"org.eclipse.jst.ws.axis.creation.ui",1321229274968
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.ui,1.0.505.v201004211805,"org.eclipse.jst.ws.axis.consumption.ui",1321229275015
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.core,1.0.407.v201104071820,"org.eclipse.jst.ws.axis.consumption.core",1321229275031
+stopped,bundle,org.eclipse.jst.ws.axis2.creation.ui,1.0.104.v201004211805,"org.eclipse.jst.ws.axis2.creation.ui",1321229275062

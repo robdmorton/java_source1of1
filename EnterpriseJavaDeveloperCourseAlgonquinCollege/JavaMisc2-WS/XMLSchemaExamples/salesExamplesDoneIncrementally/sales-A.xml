@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<sales xmlns="http://www.skilltop.com/cst6445/Lab3-A"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.skilltop.com/cst6445/Lab3-A sales-A.xsd">
+	<customer>
+		<!-- This will contain info about a customer -->
+	</customer>
+	<customer>
+		<!-- This will contain info about another customer -->
+	</customer>	
+</sales>

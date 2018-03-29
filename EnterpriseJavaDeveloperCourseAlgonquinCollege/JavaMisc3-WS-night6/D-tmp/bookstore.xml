@@ -1,0 +1,27 @@
+<!DOCTYPE bookstore SYSTEM ".\bookstore.dtd">
+<bookstore>
+	<book>
+		<author>A. Nonymous Esq.</author>
+		<title>Some Intriguing Title</title>
+		<genre>Fiction</genre>
+		<quantity>10</quantity>
+	</book>
+	<book>
+		<author>Jeff Larstone</author>
+		<title>Hello World!</title>
+		<genre>Horror</genre>
+		<quantity>0</quantity>
+	</book>
+	<book>
+		<author>John Smith</author>
+		<title>qwerty</title>
+		<genre>Non Fiction</genre>
+		<quantity>1</quantity>
+	</book>
+	<book>
+		<author>Jane Doe</author>
+		<title>123456</title>
+		<genre>Romance</genre>
+		<quantity>4</quantity>
+	</book>
+</bookstore>

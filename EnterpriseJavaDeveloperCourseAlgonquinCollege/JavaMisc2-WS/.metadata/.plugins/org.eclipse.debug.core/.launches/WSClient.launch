@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/WSConnectorClient/src/ws/client/WSClient.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ws.client.WSClient"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="http://localhost:8080/WSConnectorServlet-Exercise/WSConnectorServlet F:\work-career\3-ProfDev\AlgC-CarletonU-OttawaU-misc\13-CST6445-DEVELOPING_WEB_SERVICES_WITH_JAVA_AND_XML\lab2\purchases.xml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="WSConnectorClient"/>
+</launchConfiguration>

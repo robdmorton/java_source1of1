@@ -1,0 +1,6 @@
+#Wed Dec 07 21:00:02 EST 2011
+__DEFAULT__=false
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true
+org.eclipse.help.ui.localSearch.master=true
+expression=web service test client

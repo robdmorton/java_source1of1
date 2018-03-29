@@ -1,0 +1,20 @@
+Prompt> java coreservlets.EmployeeTest dbhost2.apl.jhu.edu 605741
+        hall xxxx sybase
+Database: Adaptive Server Anywhere
+Version: 6.0.2.2188
+
+employees:
+==========
++-------------+-------------+-------------+-------------+-------------+
+|          id |   firstname |    lastname |    language |      salary |
++-------------+-------------+-------------+-------------+-------------+
+|           1 |         Wye |       Tukay |       COBOL |     42500.0 |
+|           2 |       Britt |        Tell |         C++ |     62000.0 |
+|           3 |         Max |     Manager |        none |     15500.0 |
+|           4 |       Polly |     Morphic |   Smalltalk |     51500.0 |
+|           5 |       Frank |    Function | Common Lisp |     51500.0 |
+|           6 |      Justin |Timecompiler |        Java |     98000.0 |
+|           7 |         Sir |        Vlet |        Java |    114750.0 |
+|           8 |         Jay |        Espy |        Java |    128500.0 |
++-------------+-------------+-------------+-------------+-------------+
+

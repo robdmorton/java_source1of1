@@ -1,0 +1,20 @@
+This project is help students create an XSD.
+
+The sales example is done incrementatlly.
+Begin with version A of the XML and XSD.
+Study the files.
+Then, in package explorer, double-click version A of the sales Example.
+Right-click and select Validate XML. The file will be validated.
+Then study and validate version B then C ....
+
+A final version of the sales XML and XSD are provided.
+
+There are other examples in other folders.
+
+I hope you have fun defining your schema !
+
+Regards,
+Phil "javaman" Stang
+
+
+

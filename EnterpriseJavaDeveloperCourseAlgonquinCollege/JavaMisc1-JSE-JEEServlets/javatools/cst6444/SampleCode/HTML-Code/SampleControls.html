@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <TITLE>Sample Form Controls</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="WHITE">
+<H2 ALIGN="CENTER">Sample Form Controls</H2>
+
+<FORM ACTION="http://localhost:8088/SomeProgram"
+      METHOD="POST">
+<CENTER>
+Textfield:
+<INPUT TYPE="TEXT" NAME="firstName" VALUE="Regular Text">
+
+<P>
+<HR>
+<P>
+Enter Password:
+<INPUT TYPE="PASSWORD" NAME="password" VALUE="Secret">
+
+<P>
+<HR>
+<P>
+
+<CENTER>
+<P>
+Enter some HTML:<BR>
+<TEXTAREA NAME="HTML" ROWS=5 COLS=30>
+Delete this text and replace
+with some HTML to validate.
+</TEXTAREA>
+</CENTER>
+
+<P>
+<HR>
+<P>
+Default submit button:
+<P>
+<INPUT TYPE="SUBMIT"> 
+<P>
+Submit button with SIZE of 300 pixels. (Neither Netscape nor
+Internet Explorer support sizing buttons, but the HTML
+4.0 specification says it should be.)
+<P>
+<INPUT TYPE="SUBMIT" SIZE=300>
+
+
+<P>
+<HR>
+<P>
+<CENTER>
+Item:
+<INPUT TYPE="TEXT" NAME="Item" VALUE="256MB SIMM"><BR>
+<INPUT TYPE="SUBMIT" NAME="Add"
+       VALUE="Add Item to Cart">
+<INPUT TYPE="SUBMIT" NAME="Delete"
+       VALUE="Delete Item from Cart">
+</CENTER>
+
+<P>
+<HR>
+<P>
+<INPUT TYPE="CHECKBOX" NAME="noEmail" CHECKED>
+Check here if you do <I>not</I> want to 
+get our email newsletter
+
+</CENTER>
+
+<P>
+<HR>
+<P>
+<DL>
+  <DT>Credit Card:
+  <DD><INPUT TYPE="RADIO" NAME="creditCard" VALUE="visa">
+      Visa
+  <DD><INPUT TYPE="RADIO" NAME="creditCard" VALUE="mastercard">
+      Master Card
+  <DD><INPUT TYPE="RADIO" NAME="creditCard"
+             VALUE="java" CHECKED>
+      Java Smart Card
+  <DD><INPUT TYPE="RADIO" NAME="creditCard" VALUE="amex">
+      American Express
+  <DD><INPUT TYPE="RADIO" NAME="creditCard" VALUE="discover">
+      Discover
+</DL>
+
+<P>
+<HR>
+<P>
+Favorite language: 
+<SELECT NAME="language">
+  <OPTION VALUE="c">C
+  <OPTION VALUE="c++">C++
+  <OPTION VALUE="java" SELECTED>Java
+  <OPTION VALUE="lisp">Lisp
+  <OPTION VALUE="perl">Perl
+  <OPTION VALUE="smalltalk">Smalltalk
+</SELECT>
+<BR><BR><BR><BR><BR><BR><BR><BR>
+
+Languages you know:<BR>
+<SELECT NAME="language" MULTIPLE>
+  <OPTION VALUE="c">C
+  <OPTION VALUE="c++">C++
+  <OPTION VALUE="java" SELECTED>Java
+  <OPTION VALUE="lisp">Lisp
+  <OPTION VALUE="perl" SELECTED>Perl
+  <OPTION VALUE="smalltalk">Smalltalk
+</SELECT>
+<P>
+Neither NS nor IE support either LABEL or OPTGROUP.<BR>
+Server-side Web language:
+<SELECT NAME="language">
+  <OPTGROUP LABEL="Common Servlet Languages">
+    <OPTION VALUE="java" LABEL="j">Java
+  </OPTGROUP>
+  <OPTGROUP LABEL="Common CGI Languages">
+    <OPTION VALUE="c">C
+    <OPTION VALUE="c++">C++
+    <OPTION VALUE="java">Java
+    <OPTION VALUE="perl">Perl
+    <OPTION VALUE="vb">Visual Basic
+  </OPTGROUP>
+</SELECT>
+
+<P>
+<HR>
+Labels: neither NS nor IE support labels.
+<P>
+<LABEL>
+Label number one:
+<INPUT TYPE="TEXT" NAME="labeledTextField1" VALUE="Field 1">
+</LABEL>
+<LABEL>
+Label number two:
+<INPUT TYPE="TEXT" NAME="labeledTextField2" VALUE="Field 2">
+</LABEL>
+
+<P>
+<HR>
+Using monospaced fonts for textfields?
+<P>
+SSN proportional: <INPUT TYPE="TEXT" NAME="ssn" VALUE="123-54-6789">
+<P>
+SSN mono: 
+<CODE><INPUT TYPE="TEXT" NAME="ssn" VALUE="123-54-6789"></CODE>
+</FORM>
+
+<FORM ACTION="http://localhost:8088/SomeProgram"
+      ENCTYPE="multipart/form-data">
+Enter data file below:<BR>
+<INPUT TYPE="FILE" NAME="fileName">
+</FORM>
+
+</BODY>
+</HTML>

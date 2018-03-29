@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://business.ws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://business.ws" xmlns:intf="http://business.ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://business.ws" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="searchBookByTitle">
+    <complexType>
+     <sequence>
+      <element name="xml" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchBookByTitleResponse">
+    <complexType>
+     <sequence>
+      <element name="searchBookByTitleReturn" type="impl:BookSearchResult"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="BookSearchResult">
+    <sequence>
+     <element name="author" nillable="true" type="xsd:string"/>
+     <element name="genre" nillable="true" type="xsd:string"/>
+     <element name="quantity" type="xsd:int"/>
+     <element name="title" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="searchBookByGenre">
+    <complexType>
+     <sequence>
+      <element name="genre" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchBookByGenreResponse">
+    <complexType>
+     <sequence>
+      <element name="searchBookByGenreReturn" type="impl:BookSearchResult"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findAllBooksByGenre">
+    <complexType>
+     <sequence>
+      <element name="genre" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="findAllBooksByGenreResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="findAllBooksByGenreReturn" type="impl:BookSearchResult"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="searchBookByTitleRequest">
+
+      <wsdl:part element="impl:searchBookByTitle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findAllBooksByGenreResponse">
+
+      <wsdl:part element="impl:findAllBooksByGenreResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchBookByGenreResponse">
+
+      <wsdl:part element="impl:searchBookByGenreResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchBookByTitleResponse">
+
+      <wsdl:part element="impl:searchBookByTitleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchBookByGenreRequest">
+
+      <wsdl:part element="impl:searchBookByGenre" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="findAllBooksByGenreRequest">
+
+      <wsdl:part element="impl:findAllBooksByGenre" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BookSearchEngine">
+
+      <wsdl:operation name="searchBookByTitle">
+
+         <wsdl:input message="impl:searchBookByTitleRequest" name="searchBookByTitleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchBookByTitleResponse" name="searchBookByTitleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchBookByGenre">
+
+         <wsdl:input message="impl:searchBookByGenreRequest" name="searchBookByGenreRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchBookByGenreResponse" name="searchBookByGenreResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAllBooksByGenre">
+
+         <wsdl:input message="impl:findAllBooksByGenreRequest" name="findAllBooksByGenreRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:findAllBooksByGenreResponse" name="findAllBooksByGenreResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BookSearchEngineSoapBinding" type="impl:BookSearchEngine">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="searchBookByTitle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchBookByTitleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchBookByTitleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchBookByGenre">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchBookByGenreRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchBookByGenreResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAllBooksByGenre">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findAllBooksByGenreRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findAllBooksByGenreResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BookSearchEngineService">
+
+      <wsdl:port binding="impl:BookSearchEngineSoapBinding" name="BookSearchEngine">
+
+         <wsdlsoap:address location="http://localhost:8080/BookStoreWTP-Axis/services/BookSearchEngine"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

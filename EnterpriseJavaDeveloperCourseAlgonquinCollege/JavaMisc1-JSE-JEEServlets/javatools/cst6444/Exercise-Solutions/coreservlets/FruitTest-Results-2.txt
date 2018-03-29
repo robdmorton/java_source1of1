@@ -1,0 +1,13 @@
+Prompt> java coreservlets.FruitTest dbhost2.apl.jhu.edu 605741 
+        hall xxxx sybase
+Database: Adaptive Server Anywhere
+Version: 6.0.2.2188
+
+Comparing Apples and Oranges
+============================
+quarter  apples  applesales  oranges  orangesales  topseller
+    1     32248   $3547.28    18459    $3138.03      Maria
+    2     35009   $3850.99    18722    $3182.74      Bob
+    3     39393   $4333.23    18999    $3229.83      Joe
+    4     42001   $4620.11    19333    $3286.61      Maria
+

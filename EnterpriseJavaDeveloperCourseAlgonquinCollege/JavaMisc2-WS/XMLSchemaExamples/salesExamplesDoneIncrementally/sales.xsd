@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:p="http://www.skilltop.com/cst6445/Lab3"
+	targetNamespace="http://www.skilltop.com/cst6445/Lab3"
+	elementFormDefault="qualified">
+
+	<element name="sales" type="p:SalesType" />
+
+	<complexType name="SalesType">
+		<sequence>
+			<element name="customer" type="p:CustomerPurchasesType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="DetailsType">
+		<sequence>
+			<element name="first" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="last" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="email" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="custid" type="integer" minOccurs="1"
+				maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="CustomerPurchasesType">
+		<sequence>
+			<element name="details" type="p:DetailsType" minOccurs="1"
+				maxOccurs="1" />
+			<element name="purchases" minOccurs="0" maxOccurs="1">
+				<complexType>
+					<sequence>
+						<element name="purchase" type="p:PurchaseType"
+							minOccurs="1" maxOccurs="unbounded" />
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="PurchaseType">
+		<sequence>
+			<element name="item" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="description" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="cost" type="decimal" minOccurs="1"
+				maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+</schema>

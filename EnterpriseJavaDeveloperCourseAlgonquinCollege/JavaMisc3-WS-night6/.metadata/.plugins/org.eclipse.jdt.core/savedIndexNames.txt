@@ -1,0 +1,9 @@
+INDEX VERSION 1.126+D:\rob\sandboxes\JavaMisc3-WS-night6\.metadata\.plugins\org.eclipse.jdt.core
+681503097.index
+3555193444.index
+2661051057.index
+2781338885.index
+2608034149.index
+7322535.index
+3575984884.index
+4025933243.index

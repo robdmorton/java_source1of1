@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- 
+Front end to servlet that shows the output of other servlets.
+   
+Taken from Core Servlets and JavaServer Pages
+from Prentice Hall and Sun Microsystems Press,
+http://www.coreservlets.com/.
+&copy; 2000 Marty Hall; may be freely used or adapted.
+-->
+<HTML>
+<HEAD>
+  <TITLE>Viewing JSP and Servlet Output</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FDF5E6">
+<H1 ALIGN="CENTER">Viewing JSP and Servlet Output</H1>
+Enter a relative URL of the form /path/name and, optionally,
+any attached GET data you want to send. The raw HTML output
+of the specified URL (usually a JSP page or servlet) will be
+shown. Caveats: the URL specified cannot contain the string
+<CODE>&lt;/TEXTAREA&gt;</CODE>, and attached GET data works
+only with servlet engines that support version 2.2.
+
+<FORM ACTION="/servlet/coreservlets.ShowPage" METHOD="POST">
+  <CENTER>
+    URL: 
+    <INPUT TYPE="TEXT" NAME="url" SIZE=50 VALUE="/"><BR>
+    GET Data:
+    <INPUT TYPE="TEXT" NAME="data" SIZE=50><BR><BR>
+    <Input TYPE="SUBMIT" VALUE="Show Output">
+  </CENTER>
+</FORM>
+
+</BODY>
+</HTML>

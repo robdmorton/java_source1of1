@@ -1,0 +1,43 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BookSearchEngineService WSDL service -->
+
+  <service name="BookSearchEngine" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://business.ws"/>
+      <parameter name="wsdlServiceElement" value="BookSearchEngineService"/>
+      <parameter name="schemaQualified" value="http://business.ws"/>
+      <parameter name="wsdlServicePort" value="BookSearchEngine"/>
+      <parameter name="className" value="ws.business.BookSearchEngineSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="BookSearchEngine"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="searchBookByTitle" qname="operNS:searchBookByTitle" xmlns:operNS="http://business.ws" returnQName="retNS:searchBookByTitleReturn" xmlns:retNS="http://business.ws" returnType="rtns:BookSearchResult" xmlns:rtns="http://business.ws" soapAction="" >
+        <parameter qname="pns:xml" xmlns:pns="http://business.ws" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="searchBookByGenre" qname="operNS:searchBookByGenre" xmlns:operNS="http://business.ws" returnQName="retNS:searchBookByGenreReturn" xmlns:retNS="http://business.ws" returnType="rtns:BookSearchResult" xmlns:rtns="http://business.ws" soapAction="" >
+        <parameter qname="pns:genre" xmlns:pns="http://business.ws" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="findAllBooksByGenre" qname="operNS:findAllBooksByGenre" xmlns:operNS="http://business.ws" returnQName="retNS:findAllBooksByGenreReturn" xmlns:retNS="http://business.ws" returnType="rtns:BookSearchResult" xmlns:rtns="http://business.ws" soapAction="" >
+        <parameter qname="pns:genre" xmlns:pns="http://business.ws" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="findAllBooksByGenre searchBookByGenre searchBookByTitle"/>
+
+      <typeMapping
+        xmlns:ns="http://business.ws"
+        qname="ns:BookSearchResult"
+        type="java:ws.business.BookSearchResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	
+	TODO 11b. Create an XML document as follows:
+	
+	- The root element should be called "search"
+	- The search element has one child element called "id"
+	- The content of the id element should be "424242"	
+	
+	This XML document is the search query that will be sent
+	by the client to the Web Service. It represents a query
+	for all sales by a particular customer. The customer is
+	identified by the value of the id element.
+	
+	See /Web/sales.xml to understand the data model that this
+	search criteria is built from.
+	
+	Add the necessary elements below this comment (eg. start 
+	on line 21).
+-->
+<search>
+	<id>424242</id>
+</search>
+

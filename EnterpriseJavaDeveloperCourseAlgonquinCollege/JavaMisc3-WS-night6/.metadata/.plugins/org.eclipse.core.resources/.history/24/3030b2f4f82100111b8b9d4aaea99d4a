@@ -1,0 +1,6 @@
+#Thu Dec 08 19:01:33 EST 2011
+eclipse.preferences.version=1
+encoding//src/ws/business/BookSearchEngine.java=UTF-8
+encoding//src/ws/business/BookSearchEngineService.java=UTF-8
+encoding//src/ws/business/BookSearchEngineSoapBindingStub.java=UTF-8
+encoding//src/ws/business/BookSearchResult.java=UTF-8

@@ -1,0 +1,13 @@
+Prompt> java coreservlets.FruitTest dbhost1.apl.jhu.edu PTE 
+        hall xxxx oracle
+Database: Oracle
+Version: Oracle7 Server Release 7.2.3.0.0 - Production Release
+PL/SQL Release 2.2.3.0.0 - Production
+
+Comparing Apples and Oranges
+============================
+QUARTER  APPLES  APPLESALES  ORANGES  ORANGESALES  TOPSELLER
+    1     32248   $3547.28    18459    $3138.03      Maria
+    2     35009   $3850.99    18722    $3182.74      Bob
+    3     39393   $4333.23    18999    $3229.83      Joe
+    4     42001   $4620.11    19333    $3286.61      Maria

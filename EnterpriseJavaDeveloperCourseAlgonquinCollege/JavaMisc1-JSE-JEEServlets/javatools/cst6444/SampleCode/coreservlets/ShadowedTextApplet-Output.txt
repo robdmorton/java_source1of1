@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Using jsp:plugin</TITLE>
+<LINK REL=STYLESHEET
+      HREF="JSP-Styles.css"
+      TYPE="text/css">
+</HEAD>
+
+<BODY>
+
+<TABLE BORDER=5 ALIGN="CENTER">
+  <TR><TH CLASS="TITLE">
+      Using jsp:plugin</TABLE>
+<P>
+<CENTER>
+<OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" 
+        width="475"  height="350"  
+        codebase="http://java.sun.com/products/plugin/1.2.2/jinstall-1_2_2-win.cab#Version=1,2,2,0">
+<PARAM name="java_code" 
+       value="coreservlets.ShadowedTextApplet.class">
+<PARAM name="type" value="application/x-java-applet;">
+<PARAM name="MESSAGE" value="Your Message Here">
+<COMMENT>
+<EMBED type="application/x-java-applet;"  
+       width="475"  height="350" 
+       pluginspage="http://java.sun.com/products/plugin/" 
+       java_code="coreservlets.ShadowedTextApplet.class" 
+       MESSAGE="Your Message Here" >
+<NOEMBED>
+</COMMENT>
+</NOEMBED></EMBED>
+</OBJECT>
+
+</CENTER>
+
+</BODY>
+</HTML>

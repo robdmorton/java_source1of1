@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:p="http://www.skilltop.com/cst6445/Lab3-B"
+	targetNamespace="http://www.skilltop.com/cst6445/Lab3-B"
+	elementFormDefault="qualified">
+
+	<!-- In this pass we changed the type for customer from
+		 string to complexType CustomerPurchasesType
+	-->
+
+	<element name="sales" type="p:SalesType" />
+
+	<complexType name="SalesType">
+		<sequence>
+			<element name="customer" type="p:CustomerPurchasesType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	<!-- The complexType CustomerPurchasesType is a sequence of:
+	     - one customer details section (e.g. name, address) and
+	     - optionally info about the customers purchases.
+	     Again we will do this incrementally and use string type
+	     for this pass.
+	-->	
+	
+	<complexType name="CustomerPurchasesType">
+		<sequence>
+			<element name="details" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="purchases" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			
+<!--  	Next pass will be ...		
+				<complexType>
+					<sequence>
+						<element name="purchase" type="string"
+							minOccurs="1" maxOccurs="unbounded" />
+					</sequence>
+				</complexType>
+			</element>
+-->
+			
+		</sequence>
+	</complexType>
+	
+	
+		
+</schema>

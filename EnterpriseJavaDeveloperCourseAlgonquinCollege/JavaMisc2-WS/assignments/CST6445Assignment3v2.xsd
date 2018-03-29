@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+
+ASSIGNMENT #3
+
+Author: Rob Morton
+Date:   2011-11-26 
+
+  Subscriber XSD
+
+-->
+<schema 
+	xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:s="http://www.subscriber.org"
+	targetNamespace="http://www.subscriber.org" 	
+	elementFormDefault="qualified">
+	<element name="subscriber">
+        <complexType>
+			<sequence>
+				<element name="id" type="s:idType" minOccurs="1" maxOccurs="1" />
+				<element name="policy" type="string" minOccurs="0" maxOccurs="1" />
+				<element name="subscriptionstartdate" type="string" minOccurs="1" maxOccurs="1" />
+				<element name="locations" type="s:locationsType" minOccurs="1" maxOccurs="unbounded" />
+				<!-- <element name="bob" type="string" minOccurs="1" maxOccurs="1" /> -->
+			</sequence>
+			<attribute name="type" type="string" fixed="internal" />
+		</complexType>
+    </element>
+	
+	<complexType name="idType">
+		<sequence>
+			<element name="imsi" type="s:imsiType" minOccurs="1" maxOccurs="1" />
+			<element name="other1" type="s:other1Type" minOccurs="0" maxOccurs="1" />
+			<element name="other2" type="s:other2Type" minOccurs="0" maxOccurs="1" />
+			<element name="other3" type="s:other3Type" minOccurs="0" maxOccurs="1" />
+		</sequence>
+	</complexType>
+	
+	<simpleType name="imsiType">
+	  <restriction base="integer">
+	    <totalDigits value="10" />
+	  </restriction>
+	</simpleType>
+
+	<simpleType name="other1Type">
+	  <restriction base="integer">
+	    <minInclusive value="0" />
+	    <maxInclusive value="1000000000" />	    
+	  </restriction>
+	</simpleType>
+
+	<simpleType name="other2Type">
+	  <restriction base="string">
+	    <minLength value="5" />
+	    <maxLength value="8" />
+	  </restriction>
+	</simpleType>
+
+	<simpleType name="other3Type">
+	  <restriction base="string">
+        <length value="19" fixed="true"/>
+        <pattern value="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"/>
+	  </restriction>
+	</simpleType>
+
+	<complexType name="locationsType">
+		<sequence>
+			<element name="location" type="s:locationType" minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="locationType">
+		<sequence>
+			<element name="logical" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="physical" type="s:physicalType" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="physicalType">
+		<sequence>
+			<element name="streetaddress" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="city" type="string" minOccurs="1" maxOccurs="1" />
+			<element name="stateorprov" type="string" minOccurs="0" maxOccurs="1" />
+			<element name="code" type="s:codeType" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="codeType">
+		<sequence>
+			<element name="basicCode" type="string" minOccurs="1" maxOccurs="1" />
+		</sequence>
+		<attribute name="country" type="string" />
+	</complexType>
+	
+</schema>

@@ -1,0 +1,9 @@
+INDEX VERSION 1.126
+D:\nms_build_root\JavaMisc3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4051412928.index
+\BookStoreWTP-Axis\src
+D:\nms_build_root\JavaMisc3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3164012850.index
+\BottomUpWebServiceHelloClientOne\src
+D:\nms_build_root\JavaMisc3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\751882246.index
+\Lab4-BookStore-Solution\src
+D:\nms_build_root\JavaMisc3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\928774042.index
+\BookStoreWTP-Axis-ClientOne\src

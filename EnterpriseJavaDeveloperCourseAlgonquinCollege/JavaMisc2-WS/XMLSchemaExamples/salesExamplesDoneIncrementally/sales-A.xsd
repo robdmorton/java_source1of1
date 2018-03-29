@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:p="http://www.skilltop.com/cst6445/Lab3-A"
+	targetNamespace="http://www.skilltop.com/cst6445/Lab3-A"
+	elementFormDefault="qualified">
+
+	<!-- This is the first pass at the XSD for a stripped down
+	     sales.xml
+	     We begin with a global element named sales.
+	     We want it to be a global element since a global element
+	     can be a root element in an instance document.
+	-->
+
+
+	<element name="sales" type="p:SalesType" />
+
+	<!-- For each element we specify the type.
+	     We use the types defined by XMLSchema (the schema for schemas).
+	     Some simple types include: string, integer, dateTime.
+	     We can also use a complexType.
+	     This is most usually the type of the root element so we
+	     begin with that type.
+	     Above we see that the type for the element named sales is
+	     p:SalesType.  We define that complexType below.
+	-->
+
+
+	<complexType name="SalesType">
+		<sequence>
+			<element name="customer" type="string"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	<!-- The complexType SalesType is a sequence of zero or more customer
+	     elements.
+	     In this first pass we simplify matters by stating that customer is
+	     of type string.  
+	     Therefore the XML document MUST only contain string
+	     data in the element customer.
+	     This is the restriction that forces us to build the XML document
+	     incrementally.
+	-->	
+	
+	
+
+</schema>

@@ -1,0 +1,21 @@
+INDEX VERSION 1.126
+D:\nms_build_root\JavaMisc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1589943003.index
+\JavaBeansDemo\WEB-INF\src
+D:\nms_build_root\JavaMisc5-Servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\865603127.index
+\LoginDemoExerciseWTP\src
+D:\nms_build_root\JavaMisc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\751882246.index
+\Lab4-BookStore-Solution\src
+D:\nms_build_root\JavaMisc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2784412818.index
+\Lab4-BookStore-Exercise\src
+D:\nms_build_root\JavaMisc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\865603127.index
+\LoginDemoExerciseWTP\src
+D:\nms_build_root\JavaMisc5-Servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2662720829.index
+\Exercize3WebApp\src
+D:\nms_build_root\JavaMisc5-Servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\677638441.index
+\LoginDemoSolutionWTP\src
+D:\nms_build_root\JavaMisc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3023807770.index
+\LoginMVC\src
+D:\nms_build_root\JavaMisc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2662720829.index
+\Exercize3WebApp\src
+D:\nms_build_root\JavaMisc-JSE-JEEServlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2662720829.index
+\Exercize3WebApp\src

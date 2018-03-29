@@ -1,0 +1,5 @@
+//grant all code all permissions for security sensitive
+//rmi applications, this is an insecure policy file
+grant{
+permission java.security.AllPermission;
+};

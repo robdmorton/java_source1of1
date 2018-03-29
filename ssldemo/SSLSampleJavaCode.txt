@@ -1,0 +1,57 @@
+
+
+SSLDemo #mkdir ssldemo
+SSLDemo #cd ssldemo/
+
+SSLDemo #echo "Generate the Client and Server Keystores" > /dev/null
+SSLDemo #keytool -genkeypair -alias plainserverkeys -keyalg RSA -dname "CN=Plain Server,OU=kl2217,O=kl2217org,L=Boston,ST=MA,C=US" -keypass password -keystore plainserver.jks -storepass password
+SSLDemo #keytool -genkeypair -alias plainclientkeys -keyalg RSA -dname "CN=Plain Client,OU=kl2217,O=kl2217org,L=Boston,ST=MA,C=US" -keypass password -keystore plainclient.jks -storepass password
+
+SSLDemo #echo "Export the server public certificate and create a seperate keystore">/dev/null
+SSLDemo #keytool -exportcert -alias plainserverkeys -file serverpub.cer -keystore plainserver.jks -storepass password
+Certificate stored in file <serverpub.cer>
+SSLDemo #keytool -importcert -keystore serverpub.jks -alias serverpub -file serverpub.cer -storepass password
+Owner: CN=Plain Server, OU=kl2217, O=kl2217org, L=Boston, ST=MA, C=US
+Issuer: CN=Plain Server, OU=kl2217, O=kl2217org, L=Boston, ST=MA, C=US
+Serial number: 509fdd3e
+Valid from: Sun Nov 11 12:15:42 EST 2012 until: Sat Feb 09 12:15:42 EST 2013
+Certificate fingerprints:
+ MD5: 22:28:1C:8C:EE:19:10:E6:E4:A3:A3:F8:24:D0:E3:11
+ SHA1: 22:C7:1B:18:0D:8D:0A:6D:31:BD:CF:90:09:E9:6A:42:AA:4B:14:2A
+ Signature algorithm name: SHA1withRSA
+ Version: 3
+Trust this certificate? [no]: yes
+Certificate was added to keystore
+
+SSLDemo #echo "Export the client public certificate and create a seperate keystore">/dev/null
+SSLDemo #keytool -exportcert -alias plainclientkeys -file clientpub.cer -keystore plainclient.jks -storepass password
+Certificate stored in file <clientpub.cer>
+SSLDemo #keytool -importcert -keystore clientpub.jks -alias clientpub -file clientpub.cer -storepass password
+Owner: CN=Plain Client, OU=kl2217, O=kl2217org, L=Boston, ST=MA, C=US
+Issuer: CN=Plain Client, OU=kl2217, O=kl2217org, L=Boston, ST=MA, C=US
+Serial number: 509fdd8c
+Valid from: Sun Nov 11 12:17:00 EST 2012 until: Sat Feb 09 12:17:00 EST 2013
+Certificate fingerprints:
+ MD5: 6A:4B:AC:16:6B:5B:4E:A4:F2:9B:4C:83:A9:6D:31:4D
+ SHA1: 71:EA:11:0E:87:DB:E1:ED:66:68:C3:D4:D9:78:83:48:C9:C0:15:69
+ Signature algorithm name: SHA1withRSA
+ Version: 3
+Trust this certificate? [no]: yes
+Certificate was added to keystore
+
+SSLDemo #ls
+clientpub.cer clientpub.jks plainclient.jks plainserver.jks serverpub.cer serverpub.jks
+
+SSLDemo #vi PlainServer.java
+SSLDemo #vi PlainClient.java
+
+
+SSLDemo #
+SSLDemo #javac PlainServer.java PlainClient.java
+SSLDemo #java PlainServer &
+[1] 5749
+SSLDemo #java PlainClient
+data from PlainServer
+[1]+ Done java PlainServer
+SSLDemo #
+

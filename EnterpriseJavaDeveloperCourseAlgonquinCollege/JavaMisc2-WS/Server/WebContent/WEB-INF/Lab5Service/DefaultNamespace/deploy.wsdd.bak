@@ -1,0 +1,32 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Lab5Service WSDL service -->
+
+  <service name="Lab5" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://DefaultNamespace"/>
+      <parameter name="wsdlServiceElement" value="Lab5Service"/>
+      <parameter name="schemaQualified" value="http://DefaultNamespace"/>
+      <parameter name="wsdlServicePort" value="Lab5"/>
+      <parameter name="className" value="DefaultNamespace.Lab5SoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Lab5"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getStuff" qname="operNS:getStuff" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:getStuffReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:aInString" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setStuff" qname="operNS:setStuff" xmlns:operNS="http://DefaultNamespace" soapAction="" >
+        <parameter qname="pns:aInStuff" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="setStuff getStuff"/>
+
+  </service>
+</deployment>

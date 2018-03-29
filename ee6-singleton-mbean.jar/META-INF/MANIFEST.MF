@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 14.1-b02 (Sun Microsystems Inc.)
+Dependencies: org.apache.log4j
+Class-Path: 
+

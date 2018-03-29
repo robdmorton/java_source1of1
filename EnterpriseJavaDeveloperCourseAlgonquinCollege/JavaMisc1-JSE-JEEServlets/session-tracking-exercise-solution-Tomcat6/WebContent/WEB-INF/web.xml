@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>session-tracking-exercise-solution-Tomcat6</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description>Registration With Sessions</description>
+    <display-name>Registration With Sessions</display-name>
+    <servlet-name>RegistrationWithSessions</servlet-name>
+    <servlet-class>sessionTracking.RegistrationWithSessions</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationWithSessions</servlet-name>
+    <url-pattern>/registration</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+    <description>Show Items</description>
+    <display-name>Show Items</display-name>
+    <servlet-name>ShowItems</servlet-name>
+    <servlet-class>sessionTracking.ShowItems</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowItems</servlet-name>
+    <url-pattern>/show-items</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+    <description>Repeat Visitor</description>
+    <display-name>Repeat Visitor</display-name>
+    <servlet-name>RepeatVisitor</servlet-name>
+    <servlet-class>sessionTracking.RepeatVisitor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RepeatVisitor</servlet-name>
+    <url-pattern>/repeat-visitor</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+    <description>Show Referers</description>
+    <display-name>Show Referers</display-name>
+    <servlet-name>ShowReferers</servlet-name>
+    <servlet-class>sessionTracking.ShowReferers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowReferers</servlet-name>
+    <url-pattern>/show-referers</url-pattern>
+  </servlet-mapping>    
+</web-app>

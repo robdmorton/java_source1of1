@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.6.0_24-b07 (Sun Microsystems Inc.)
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: takehomeassint4clientproject.CheckCallByOnRemoteIfClient
+Class-Path: TakeHomeAssint4InterfaceProject.jar lib/TakeHomeAssint4Int
+ erfaceProject.jar 
+

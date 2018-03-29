@@ -1,0 +1,22 @@
+Prompt> java coreservlets.EmployeeTest2 dbhost2 605741 
+        hall xxxx sybase
+<TABLE BORDER=1>
+  <TR BGCOLOR="CYAN">
+    <TH>id<TH>firstname<TH>lastname<TH>language<TH>salary
+  <TR>
+    <TD>1<TD>Wye<TD>Tukay<TD>COBOL<TD>42500.0
+  <TR>
+    <TD>2<TD>Britt<TD>Tell<TD>C++<TD>62000.0
+  <TR>
+    <TD>3<TD>Max<TD>Manager<TD>none<TD>15500.0
+  <TR>
+    <TD>4<TD>Polly<TD>Morphic<TD>Smalltalk<TD>51500.0
+  <TR>
+    <TD>5<TD>Frank<TD>Function<TD>Common Lisp<TD>51500.0
+  <TR>
+    <TD>6<TD>Justin<TD>Timecompiler<TD>Java<TD>98000.0
+  <TR>
+    <TD>7<TD>Sir<TD>Vlet<TD>Java<TD>114750.0
+  <TR>
+    <TD>8<TD>Jay<TD>Espy<TD>Java<TD>128500.0
+</TABLE>

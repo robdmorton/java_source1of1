@@ -1,0 +1,9 @@
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP-ENV:Body>
+		<search xmlns="urn:cst6445">
+			<title xmlns="">test</title>
+			<echo xmlns="">Hello World!</echo>
+		</search>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

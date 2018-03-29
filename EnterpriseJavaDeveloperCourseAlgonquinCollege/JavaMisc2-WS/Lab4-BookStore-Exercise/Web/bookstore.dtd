@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!ELEMENT bookstore (book*)>
+<!ELEMENT book (author, title, genre, quantity)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>

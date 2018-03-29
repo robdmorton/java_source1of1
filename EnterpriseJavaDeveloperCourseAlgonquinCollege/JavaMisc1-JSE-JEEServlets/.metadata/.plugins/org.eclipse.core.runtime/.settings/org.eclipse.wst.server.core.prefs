@@ -1,0 +1,4 @@
+#Mon Apr 23 19:21:18 EDT 2012
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime id\="Apache Tomcat v6.0" location\="C\:/Program Files/apache-tomcat-6.0.28" name\="Apache Tomcat v6.0" runtime-type-id\="org.eclipse.jst.server.tomcat.runtime.60" timestamp\="1"/>\r\n  <runtime id\="Apache Tomcat v5.5" location\="C\:/Program Files/apache-tomcat-5.5.35" name\="Apache Tomcat v5.5" runtime-type-id\="org.eclipse.jst.server.tomcat.runtime.55" timestamp\="0"/>\r\n  <runtime id\="Apache Tomcat v7.0" location\="C\:/Program Files/apache-tomcat-7.0.22" name\="Apache Tomcat v7.0" runtime-type-id\="org.eclipse.jst.server.tomcat.runtime.70" timestamp\="0"/>\r\n</runtimes>\r\n
+eclipse.preferences.version=1

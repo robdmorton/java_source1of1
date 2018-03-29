@@ -1,0 +1,76 @@
+<!-- Bork build config (Apache Ant 1.5 or later) -->
+<project name="bork" default="jar">
+
+  <property name="release" value="1.4" />
+  
+  <path id="bork.classpath">
+    <pathelement path="classes" />
+  </path>
+
+  <target name="all" depends="zip" />
+
+  <target name="init">
+  </target>
+
+  <target name="prepare" depends="init">
+    <mkdir dir="classes" />
+  </target>
+
+  <target name="compile" depends="prepare">
+    <javac srcdir="src" destdir="classes" debug="on">
+      <classpath refid="bork.classpath" />
+      <include name="**/*.java" />
+    </javac>
+  </target>
+
+  <target name="zip" depends="jar">
+    <mkdir dir="dist" />
+    <zip zipfile="dist/bork-${release}.zip">
+      <zipfileset dir="." prefix="bork-${release}">
+        <include name="build.bat" />
+        <include name="build.xml" />
+        <include name="bork.mf" />
+        <include name="bork.jar" />
+        <include name="bork.bat" />
+        <include name="bork_nuke.bat" />
+        <include name=".classpath" />
+        <include name=".project" />
+        <include name="src/**/*.java" />
+        <include name="tst/**/*.java" />
+        <include name="tst/**/test_data*" />
+        <include name="ant/**" />
+        <include name="README.txt" />
+        <include name="LICENSE.txt" />
+        <include name="release_notes.txt" />
+        
+        <exclude name="**/CVS/**" />
+      </zipfileset>
+
+      <zipfileset dir="." prefix="bork-${release}" filemode="755">
+        <include name="build.sh" />
+        <include name="bork.sh" />
+        <include name="bork_nuke.sh" />
+      </zipfileset>
+    </zip>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="bork.jar" manifest="bork.mf">
+      <fileset dir="classes">
+        <include name="**/*.class" />
+      </fileset>
+    </jar>
+  </target>
+  
+  <target name="clean" depends="init">
+    <delete>
+      <fileset dir="classes" />
+      <fileset dir="tst_classes" />
+      <fileset dir="dist" />
+      <fileset dir=".">
+        <include name="bork.jar" />
+        <include name="bork-${release}.zip" />
+      </fileset>
+    </delete>
+  </target>
+</project>

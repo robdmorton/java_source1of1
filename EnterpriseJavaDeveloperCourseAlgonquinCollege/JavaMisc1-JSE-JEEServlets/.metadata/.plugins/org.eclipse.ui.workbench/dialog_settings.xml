@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="FileSystemImportWizard">
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="D:\Documents and Settings\rmorton\Desktop"/>
+			<item value="D:\Documents and Settings\rmorton\Desktop\JavaBeansDemo"/>
+			<item value="D:\Documents and Settings\rmorton\Desktop\JavaBeansDemo\WEB-INF\src\userstuff"/>
+			<item value="D:\nms_build_root\JavaMisc5-Servlets\javatools\cst6444\student\exercize2"/>
+		</list>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="28" key="DIALOG_Y_ORIGIN"/>
+		<item value="302" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="ZipFileImportWizard">
+		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="D:\Documents and Settings\rmorton\Desktop\sockets.zip"/>
+			<item value="D:\Documents and Settings\rmorton\Desktop\sock.zip"/>
+			<item value="D:\Documents and Settings\rmorton\Desktop\Lab7-SocketExample.zip"/>
+			<item value="D:\Documents and Settings\rmorton\Desktop\Lab7-BallExample.zip"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item value="584" key="DIALOG_WIDTH"/>
+		<item value="-152" key="DIALOG_Y_ORIGIN"/>
+		<item value="640" key="DIALOG_HEIGHT"/>
+		<item value="-39" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|0|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.import.ZipFile" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+</section>

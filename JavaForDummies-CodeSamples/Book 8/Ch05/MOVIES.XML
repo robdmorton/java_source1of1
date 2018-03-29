@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE Movies SYSTEM "movie.dtd">
+<!--My Favorite Movies-->
+<Movies>
+  <Movie year="1946">
+    <Title>It's a Wonderful Life</Title>
+    <Price>14.95</Price>
+  </Movie>
+  <Movie year="1965">
+    <Title>The Great Race</Title>
+    <Price>12.95</Price>
+  </Movie>
+  <Movie year="1974">
+    <Title>Young Frankenstein</Title>
+    <Price>16.95</Price>
+  </Movie>
+  <Movie year="1975">
+    <Title>The Return of the Pink Panther</Title>
+    <Price>11.95</Price>
+  </Movie>
+  <Movie year="1977">
+    <Title>Star Wars</Title>
+    <Price>17.95</Price>
+  </Movie>
+  <Movie year="1987">
+    <Title>The Princess Bride</Title>
+    <Price>16.95</Price>
+  </Movie>
+  <Movie year="1989">
+    <Title>Glory</Title>
+    <Price>14.95</Price>
+  </Movie>
+  <Movie year="1995">
+    <Title>Apollo 13</Title>
+    <Price>19.95</Price>
+  </Movie>
+  <Movie year="1997">
+    <Title>The Game</Title>
+    <Price>14.95</Price>
+  </Movie>
+  <Movie year="2001">
+    <Title>The Lord of the Rings: Fellowship of the Rings</Title>
+    <Price>19.95</Price>
+  </Movie>
+</Movies>

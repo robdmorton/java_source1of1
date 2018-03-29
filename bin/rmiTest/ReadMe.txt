@@ -1,0 +1,1 @@
+run rmiregistry here

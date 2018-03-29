@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+ASSIGNMENT #1 (re-written slightly to handle validation for assignment #3)
+
+Author: Rob Morton
+Date:   2011-11-17 
+
+A subscriber is a business object which represents and end user of the 'system'
+
+Subscribers are identified by their ID which can be one or more of three things: IMSI,other1 and other2.
+They contain information regarding the policy applied to the subscriber by the 'system' as well as the location(s)
+of the given subscriber
+     
+     N.B. xsi:schemaLocation is critical for validation
+      
+-->
+<subscriber type='internal'
+    xmlns="http://www.subscriber.org"
+    xmlns:bob="http://www.bob.org"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.subscriber.org 
+	    file:///C:\Users\rob\Google%20Drive\work-career\03-ProfDev\00-misc\eclipseWorkspace\java_source1of1\CST6445Assignment3v2.xsd">
+	<id>
+		<imsi>1234567890</imsi>
+		<other3>1234 5678 9012 3456</other3>
+	</id>
+	<subscriptionstartdate>2011-11-10</subscriptionstartdate>
+	<locations>
+		<location>
+			<logical>cct1234567890</logical>
+			<physical>
+				<streetaddress>123 abc str</streetaddress>
+				<city>abc</city>
+				<stateorprov>blah</stateorprov>
+				<code country='CA'>
+					<basicCode>k3j 2g5</basicCode>
+				</code>
+			</physical>
+		</location>
+		<location>
+			<logical>cct1234567891</logical>
+			<physical>
+				<streetaddress>456 abc str</streetaddress>
+				<city>def</city>
+				<code country='US'>
+					<basicCode>12345</basicCode>
+				</code>
+			</physical>
+		</location>
+	</locations>
+</subscriber>
+

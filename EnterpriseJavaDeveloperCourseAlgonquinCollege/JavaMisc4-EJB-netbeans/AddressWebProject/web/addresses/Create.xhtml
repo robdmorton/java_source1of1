@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAddressesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAddressesLabel_addressid}" for="addressid" />
+                    <h:inputText id="addressid" value="#{addressesController.selected.addressid}" title="#{bundle.CreateAddressesTitle_addressid}" required="true" requiredMessage="#{bundle.CreateAddressesRequiredMessage_addressid}"/>
+                    <h:outputLabel value="#{bundle.CreateAddressesLabel_firstname}" for="firstname" />
+                    <h:inputText id="firstname" value="#{addressesController.selected.firstname}" title="#{bundle.CreateAddressesTitle_firstname}" required="true" requiredMessage="#{bundle.CreateAddressesRequiredMessage_firstname}"/>
+                    <h:outputLabel value="#{bundle.CreateAddressesLabel_lastname}" for="lastname" />
+                    <h:inputText id="lastname" value="#{addressesController.selected.lastname}" title="#{bundle.CreateAddressesTitle_lastname}" required="true" requiredMessage="#{bundle.CreateAddressesRequiredMessage_lastname}"/>
+                    <h:outputLabel value="#{bundle.CreateAddressesLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{addressesController.selected.email}" title="#{bundle.CreateAddressesTitle_email}" required="true" requiredMessage="#{bundle.CreateAddressesRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.CreateAddressesLabel_phonenumber}" for="phonenumber" />
+                    <h:inputText id="phonenumber" value="#{addressesController.selected.phonenumber}" title="#{bundle.CreateAddressesTitle_phonenumber}" required="true" requiredMessage="#{bundle.CreateAddressesRequiredMessage_phonenumber}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{addressesController.create}" value="#{bundle.CreateAddressesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{addressesController.prepareList}" value="#{bundle.CreateAddressesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateAddressesIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

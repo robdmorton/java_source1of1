@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getStuff">
+    <complexType>
+     <sequence>
+      <element name="aInString" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStuffResponse">
+    <complexType>
+     <sequence>
+      <element name="getStuffReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStuff">
+    <complexType>
+     <sequence>
+      <element name="aInStuff" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStuffResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setStuffResponse">
+
+      <wsdl:part element="impl:setStuffResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStuffRequest">
+
+      <wsdl:part element="impl:setStuff" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStuffRequest">
+
+      <wsdl:part element="impl:getStuff" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStuffResponse">
+
+      <wsdl:part element="impl:getStuffResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Lab5">
+
+      <wsdl:operation name="getStuff">
+
+         <wsdl:input message="impl:getStuffRequest" name="getStuffRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStuffResponse" name="getStuffResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStuff">
+
+         <wsdl:input message="impl:setStuffRequest" name="setStuffRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setStuffResponse" name="setStuffResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Lab5SoapBinding" type="impl:Lab5">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getStuff">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStuffRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStuffResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStuff">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setStuffRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setStuffResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Lab5Service">
+
+      <wsdl:port binding="impl:Lab5SoapBinding" name="Lab5">
+
+         <wsdlsoap:address location="http://localhost:8080/Server/services/Lab5"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
