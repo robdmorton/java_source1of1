@@ -2,8 +2,8 @@
 /*
  * Created on Nov 22, 2004
  *
- * TODO To change the template for this generated file go to
- * Window - Preferences - Java - Code Style - Code Templates
+ * TODO To change the template for this generated file go to Window - Preferences - Java - Code
+ * Style - Code Templates
  */
 package introductionToJava;
 
@@ -11,13 +11,13 @@ package introductionToJava;
 /**
  * @author Doug Lowe
  *
- * TODO To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Style - Code Templates
+ *         TODO To change the template for this generated type comment go to Window - Preferences -
+ *         Java - Code Style - Code Templates
  */
 public class HelloApp3 {
 
-	    public static void main(String[] args) {
-		        HelloSayer h = new HelloSayer("Hello", "World!");
-        		h.sayHello();
-	    }
+  public static void main(String[] args) {
+    HelloSayer h = new HelloSayer("Hello", "World!");
+    h.sayHello();
+  }
 }

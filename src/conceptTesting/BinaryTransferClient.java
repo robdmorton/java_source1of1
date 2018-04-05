@@ -2,7 +2,7 @@
 package conceptTesting;
 
 import java.net.*;
-//import java.util.*;
+// import java.util.*;
 import java.io.*;
 
 public class BinaryTransferClient {
@@ -186,7 +186,8 @@ public class BinaryTransferClient {
           System.out.println("getdouble bytes_read: " + bytes_read);
           byte[] bc = new byte[bytes_read];
           System.arraycopy(b, 0, bc, 0, bytes_read);
-          double d = java.nio.ByteBuffer.wrap(bc).order(java.nio.ByteOrder.LITTLE_ENDIAN).getDouble();
+          double d =
+              java.nio.ByteBuffer.wrap(bc).order(java.nio.ByteOrder.LITTLE_ENDIAN).getDouble();
           Double D = new Double(d);
           quote = D.toString();
         }

@@ -1,23 +1,20 @@
 package introductionToJava;
 
 public class Orange extends GenericFruit {
-  
+
   boolean seedless;
-  
-  Orange()
-  {
-    
+
+  Orange() {
+
   }
-  
-  Orange(int s, boolean sl)
-  {
+
+  Orange(int s, boolean sl) {
     super(s);
     seedless = sl;
   }
 
-  boolean isSeedless()
-  {
+  boolean isSeedless() {
     return seedless;
   }
-  
+
 }

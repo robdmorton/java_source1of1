@@ -1,10 +1,7 @@
 package introductionToJava;
 
-public class Worker extends Person
-{
+public class Worker extends Person {
 
-  public Worker()
-  {
-  }
-  
+  public Worker() {}
+
 }

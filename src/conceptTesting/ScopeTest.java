@@ -2,7 +2,7 @@ package conceptTesting;
 
 public class ScopeTest {
 
-  boolean testScope(){
+  boolean testScope() {
     return true;
   }
 

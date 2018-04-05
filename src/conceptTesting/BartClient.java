@@ -5,28 +5,22 @@ import java.net.*;
 import java.util.*;
 import java.io.*;
 
-public class BartClient
-{
-  public static void main(String[] args)
-  {
+public class BartClient {
+  public static void main(String[] args) {
     int port = 1234;
     char[] readBuf = new char[1024 * 8];
 
     System.out.println("Welcome to the Bart Client\n");
 
     Socket s = getSocket(port);
-    System.out.println(
-        "Client Socket: " + s.toString());
+    System.out.println("Client Socket: " + s.toString());
 
-    try
-    {
+    try {
       System.out.println("Connected on port " + port);
 
-      Scanner in =
-          new Scanner(s.getInputStream());
+      Scanner in = new Scanner(s.getInputStream());
       PrintWriter out;
-      out = new PrintWriter(s.getOutputStream(),
-          true);
+      out = new PrintWriter(s.getOutputStream(), true);
 
       // discard the welcome message
       System.out.println(in.nextLine());
@@ -35,18 +29,17 @@ public class BartClient
       System.out.println(in.nextLine());
 
       // get a quote
-      //			out.println("get");
+      // out.println("get");
       out.print("get");
       out.flush();
-      //			Thread.sleep(1000);//in millis...
+      // Thread.sleep(1000);//in millis...
       String quote = null;
       BufferedReader is = new BufferedReader(new InputStreamReader(s.getInputStream()));
       int bytesRead = is.read(readBuf);
-      if(bytesRead != -1)
-      {
+      if (bytesRead != -1) {
         quote = new String(readBuf);
-      }			
-      //			String quote = in.nextLine();
+      }
+      // String quote = in.nextLine();
       Thread.sleep(60);
 
       // disconnect from the server
@@ -57,38 +50,28 @@ public class BartClient
       // write the quote on the chalkboard
       for (int i = 0; i < 20; i++)
         System.out.println(quote);
-    }
-    catch (Exception e)
-    {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  private static Socket getSocket(int port)
-  {
+  private static Socket getSocket(int port) {
     Socket s;
     String host;
     InetAddress ip;
 
     Scanner sc = new Scanner(System.in);
 
-    while (true)
-    {
-      System.out.print(
-          "What server do you want to connect to?");
+    while (true) {
+      System.out.print("What server do you want to connect to?");
       host = sc.nextLine();
-      try
-      {
+      try {
         ip = InetAddress.getByName(host);
         s = new Socket(ip, port);
         return s;
-      }
-      catch (UnknownHostException e)
-      {
+      } catch (UnknownHostException e) {
         System.out.println("The host is unknown.");
-      }
-      catch (IOException e)
-      {
+      } catch (IOException e) {
         System.out.println("Network error.");
       }
     }

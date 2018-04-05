@@ -53,18 +53,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 import javax.imageio.ImageIO;
-
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-
 import com.timesten.jdbc.TimesTenDriver;
-
 import fileIO.MiscFileReadWrite;
 import genericsinheritanceinterfacesetc.GenericsMethods;
 import genericsinheritanceinterfacesetc.GenericsType;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -72,7 +67,6 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.ShortBufferException;
 import javax.crypto.spec.IvParameterSpec;
-
 import java.security.*;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
@@ -88,12 +82,13 @@ class BinaryTransferServerThreadFactory implements ThreadFactory {
 
   public Thread newThread(Runnable r) {
     Thread aThread = null;
-    aThread = new Thread(r, name + "-" + "SocketWorkerPool" + "-"
-        + threadCounter.incrementAndGet());
+    aThread =
+        new Thread(r, name + "-" + "SocketWorkerPool" + "-" + threadCounter.incrementAndGet());
     aThread.setDaemon(true);
     return aThread;
   }
 }
+
 
 class BinaryTransferServerPortListenerThreadFactory implements ThreadFactory {
   private String name;
@@ -106,13 +101,14 @@ class BinaryTransferServerPortListenerThreadFactory implements ThreadFactory {
 
   public Thread newThread(Runnable r) {
     Thread aThread = null;
-    aThread = new Thread(r, name + "-" + "PortListenerWorkerPool" + "-"
-        + threadCounter.incrementAndGet());
+    aThread = new Thread(r,
+        name + "-" + "PortListenerWorkerPool" + "-" + threadCounter.incrementAndGet());
     aThread.setDaemon(true);
     aThread.setDaemon(false); // QQQ non-daemon threads will prevent JVM shutdown
     return aThread;
   }
 }
+
 
 class MiscThreadFactory implements ThreadFactory {
   private String name;
@@ -125,18 +121,20 @@ class MiscThreadFactory implements ThreadFactory {
 
   public Thread newThread(Runnable r) {
     Thread aThread = null;
-    aThread = new Thread(r, name + "-" + "WorkerPool" + "-"
-        + threadCounter.incrementAndGet());
+    aThread = new Thread(r, name + "-" + "WorkerPool" + "-" + threadCounter.incrementAndGet());
     aThread.setDaemon(false); // QQQ non-daemon[setDaemon(false)] threads will prevent JVM shutdown
     aThread.setDaemon(true);
 
-    //threadpool catches exceptions before this handler can get them...catch them thrown from Future.get()
-    aThread.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHander()); 
+    // threadpool catches exceptions before this handler can get them...catch them thrown from
+    // Future.get()
+    aThread.setUncaughtExceptionHandler(new DefaultUncaughtExceptionHander());
 
-    TestUtility.printer("Created new thread (via " + this.getClass().getName() + ")..." + aThread.getName());
+    TestUtility.printer(
+        "Created new thread (via " + this.getClass().getName() + ")..." + aThread.getName());
     return aThread;
-  }	
+  }
 }
+
 
 class RejectedExecutionHandlerImpl implements RejectedExecutionHandler {
   @Override
@@ -144,6 +142,7 @@ class RejectedExecutionHandlerImpl implements RejectedExecutionHandler {
     TestUtility.printer(r.toString() + " is rejected");
   }
 }
+
 
 class BinaryTransferServerPortListenerTask implements Callable<String> {
 
@@ -156,8 +155,8 @@ class BinaryTransferServerPortListenerTask implements Callable<String> {
     // staticCtr.incrementAndGet();
   }
 
-  BinaryTransferServerPortListenerTask(ExecutorService aInThreadPool,
-      ServerSocket aInServerSocket, int aInPort) {
+  BinaryTransferServerPortListenerTask(ExecutorService aInThreadPool, ServerSocket aInServerSocket,
+      int aInPort) {
     aTransferThreadPool = aInThreadPool;
     aServerSocket = aInServerSocket;
     port = aInPort;
@@ -167,8 +166,7 @@ class BinaryTransferServerPortListenerTask implements Callable<String> {
     Quote bart = new Quote();
     // try(ServerSocket ss = new ServerSocket(port,1);)
     try {
-      TestUtility.printer("starting " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
       TestUtility.printer("Binary Transfer Server 1.0");
       TestUtility.printer("Listening on port: " + port);
       TestUtility.printer("Server Socket: " + aServerSocket.toString());
@@ -180,8 +178,8 @@ class BinaryTransferServerPortListenerTask implements Callable<String> {
 
         // spin off a thread to take care of this request when a connection is
         // made...
-        Future<String> aBinaryTransferThreadFuture = aTransferThreadPool
-            .submit(new BinaryTransferTask(s, bart));
+        Future<String> aBinaryTransferThreadFuture =
+            aTransferThreadPool.submit(new BinaryTransferTask(s, bart));
         // or...
         // Thread t = new Thread(new BinaryTransferThread(s, bart));
         // t.start();
@@ -197,20 +195,16 @@ class BinaryTransferServerPortListenerTask implements Callable<String> {
         try {
           aStr = aBinaryTransferThreadFuture.get(1L, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
-          boolean successfulyCancelled = aBinaryTransferThreadFuture
-              .cancel(true);
+          boolean successfulyCancelled = aBinaryTransferThreadFuture.cancel(true);
           if (successfulyCancelled) {
-            TestUtility
-            .printer("computation cancelled (closing connection(socket closed))"
-                + " line #: "
-                + Thread.currentThread().getStackTrace()[1].getLineNumber());
+            TestUtility.printer("computation cancelled (closing connection(socket closed))"
+                + " line #: " + Thread.currentThread().getStackTrace()[1].getLineNumber());
             s.close();
           }
           TestUtility.printer("caught exception: " + e + " line #: "
               + Thread.currentThread().getStackTrace()[1].getLineNumber());
           if (e instanceof java.lang.InterruptedException) {
-            TestUtility.printer("throwing InterruptedException: " + e
-                + " line #: "
+            TestUtility.printer("throwing InterruptedException: " + e + " line #: "
                 + Thread.currentThread().getStackTrace()[1].getLineNumber());
             throw e;
           }
@@ -221,10 +215,8 @@ class BinaryTransferServerPortListenerTask implements Callable<String> {
       }
     } catch (Exception e) {
       TestUtility.printer("interrupted: " + Thread.interrupted());
-      TestUtility.printer("staticCtr=" + staticCtr.get() + ":"
-          + "caught exception: " + e);
-      return (System.currentTimeMillis() + ":" + "thread->" + Thread
-          .currentThread().getName());
+      TestUtility.printer("staticCtr=" + staticCtr.get() + ":" + "caught exception: " + e);
+      return (System.currentTimeMillis() + ":" + "thread->" + Thread.currentThread().getName());
     } finally {
       try {
         if (aServerSocket != null) {
@@ -239,6 +231,7 @@ class BinaryTransferServerPortListenerTask implements Callable<String> {
     }
   }
 }
+
 
 class BinaryTransferTask implements Callable<String> {
   private Socket s;
@@ -257,14 +250,12 @@ class BinaryTransferTask implements Callable<String> {
     long threadId = Thread.currentThread().getId();
     String client = s.getInetAddress().toString();
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     TestUtility.printer("Connected to " + client + " (in thread: "
         + Thread.currentThread().getName() + ":" + threadId + ")");
     try {
-      s.getOutputStream().write(
-          "Welcome to the Binary Transfer Server\n".getBytes("UTF-8"));
+      s.getOutputStream().write("Welcome to the Binary Transfer Server\n".getBytes("UTF-8"));
       s.getOutputStream().flush();
       s.getOutputStream().write("Enter BYE to exit.\n".getBytes("UTF-8"));
       s.getOutputStream().flush();
@@ -310,7 +301,7 @@ class BinaryTransferTask implements Callable<String> {
             // oos.writeBoolean(i);
             // oos.flush();
 
-            byte[] result = new byte[] { (byte) (i ? 0x01 : 0x00) }; // bool ->
+            byte[] result = new byte[] {(byte) (i ? 0x01 : 0x00)}; // bool ->
             // {1 byte}
             s.getOutputStream().write(result);
             s.getOutputStream().flush();
@@ -351,8 +342,7 @@ class BinaryTransferTask implements Callable<String> {
             s.getOutputStream().write(result);
             s.getOutputStream().flush();
           } else {
-            TestUtility.printer("Client " + client
-                + " sent us something weird: \"" + input + "\"");
+            TestUtility.printer("Client " + client + " sent us something weird: \"" + input + "\"");
             s.getOutputStream().write("Huh?".getBytes("UTF-8"));
             s.getOutputStream().flush();
           }
@@ -367,16 +357,16 @@ class BinaryTransferTask implements Callable<String> {
         TestUtility.printer("Closed connection to " + client);
       } catch (Exception e) {
         e.printStackTrace();
-        TestUtility.printer("Problem encountered closing connection to "
-            + client);
+        TestUtility.printer("Problem encountered closing connection to " + client);
       }
       TestUtility.printer("returning from thread...");
     }
-    return System.currentTimeMillis() + ":thread:" + "thread->"
-    + Thread.currentThread().getName() + ", threadID:" + threadId;
+    return System.currentTimeMillis() + ":thread:" + "thread->" + Thread.currentThread().getName()
+        + ", threadID:" + threadId;
   }
 
 }
+
 
 class TestCancelledTask implements Callable<String> {
 
@@ -389,13 +379,11 @@ class TestCancelledTask implements Callable<String> {
   public String call() {
     int ctr = 0;
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     synchronized (staticCtr) {
       staticCtr.incrementAndGet();
-      TestUtility.printer("staticCtr=" + staticCtr.get() + ":starting...:"
-          + this.toString());
+      TestUtility.printer("staticCtr=" + staticCtr.get() + ":starting...:" + this.toString());
     }
     while (true) {
       try {
@@ -416,17 +404,16 @@ class TestCancelledTask implements Callable<String> {
         // TestUtility.printer( "spinning...ctr:" + ctr );
         ctr++;
       } catch (Exception e) {
-        TestUtility.printer("staticCtr=" + staticCtr.get() + ":"
-            + "caught exception: " + e + ":" + this.toString());
-        TestUtility.printer("returning from "
-            + Thread.currentThread().getName() + " thread...");
-        return (System.currentTimeMillis() + ":" + "thread->" + Thread
-            .currentThread().getName());
+        TestUtility.printer("staticCtr=" + staticCtr.get() + ":" + "caught exception: " + e + ":"
+            + this.toString());
+        TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
+        return (System.currentTimeMillis() + ":" + "thread->" + Thread.currentThread().getName());
       } finally {
       }
     }
   }
 }
+
 
 class TestCancellerTask implements Callable<String> {
 
@@ -445,13 +432,12 @@ class TestCancellerTask implements Callable<String> {
     aMiscThreadPool = null;
     try {
       List<Future<String>> aListOfFutures = new ArrayList<Future<String>>();
-      ThreadFactory aMiscThreadFactory = new MiscThreadFactory(
-          "taskToBeCancelled") {
+      ThreadFactory aMiscThreadFactory = new MiscThreadFactory("taskToBeCancelled") {
         @Override
         public Thread newThread(Runnable r) {
           Thread t = null;
-          t = new Thread(r, "taskToBeCancelled-AnonymousThreadFactory" + "-"
-              + "WorkerPool" + "-" + threadCounter.incrementAndGet());
+          t = new Thread(r, "taskToBeCancelled-AnonymousThreadFactory" + "-" + "WorkerPool" + "-"
+              + threadCounter.incrementAndGet());
           t.setDaemon(false);
           TestUtility.printer("Created new thread..." + t.getName());
           return t;
@@ -460,13 +446,11 @@ class TestCancellerTask implements Callable<String> {
       // aMiscThreadPool = Executors.newFixedThreadPool(2, aMiscThreadFactory);
       RejectedExecutionHandlerImpl rejectionHandler = new RejectedExecutionHandlerImpl();
       aMiscThreadPool = new ThreadPoolExecutor(2, 2, 10, TimeUnit.SECONDS,
-          new ArrayBlockingQueue<Runnable>(2), aMiscThreadFactory,
-          rejectionHandler);
+          new ArrayBlockingQueue<Runnable>(2), aMiscThreadFactory, rejectionHandler);
 
       Future<String> aFuture = null;
 
-      TestUtility.printer("starting " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
       // for ( int i = 0;i<100;i++)
       for (int i = 0; i < 1; i++) {
@@ -488,8 +472,7 @@ class TestCancellerTask implements Callable<String> {
             @SuppressWarnings("unused")
             String aStr = aFuture.get(1L, TimeUnit.MILLISECONDS);
           } catch (Exception e) {
-            TestUtility.printer("aFuture: " + aFuture.toString() + ":"
-                + "caught exception: " + e);
+            TestUtility.printer("aFuture: " + aFuture.toString() + ":" + "caught exception: " + e);
             boolean successfulyCancelled = aFuture.cancel(true);
             if (successfulyCancelled) {
               TestUtility.printer("computation cancelled: TestCancelTask");
@@ -528,41 +511,42 @@ class TestCancellerTask implements Callable<String> {
   }
 }
 
+
 class ThreadThrowingExceptionTask implements Runnable {
 
-  ThreadThrowingExceptionTask() {
-  }
+  ThreadThrowingExceptionTask() {}
 
   public void run() {
     int i = 1;
     Integer i2 = null;
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread..." + Thread.currentThread().getId());
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread..."
+        + Thread.currentThread().getId());
 
-    TestUtility.printer(Thread.currentThread().getName()
-        + " throwing exception now...did thread \'" + Thread.currentThread().getName() + "\' die???");		
+    TestUtility.printer(Thread.currentThread().getName() + " throwing exception now...did thread \'"
+        + Thread.currentThread().getName() + "\' die???");
 
     // div by 0...does NOT kill thread
-    //		i = i / 0;
+    // i = i / 0;
 
-    //		try {
-    //			i = i / 0;
-    //		} catch (Exception e) {
-    //			TestUtility.printer("caught exception: " + e);
-    //		} finally {
-    //			TestUtility.printer("returning from " + Thread.currentThread().getName()
-    //			    + " thread...");
-    //		}
+    // try {
+    // i = i / 0;
+    // } catch (Exception e) {
+    // TestUtility.printer("caught exception: " + e);
+    // } finally {
+    // TestUtility.printer("returning from " + Thread.currentThread().getName()
+    // + " thread...");
+    // }
     // return((new Integer(i)).toString());
 
     // NPE...does NOT kill thread
-    //		i2.floatValue();
+    // i2.floatValue();
 
     // explicitly throwing a RuntimeException...does NOT kill thread
     throw new RuntimeException();
   }
 }
+
 
 class ThreadReadModifyWriteTask implements Runnable {
   // volatile int i=0;
@@ -574,8 +558,7 @@ class ThreadReadModifyWriteTask implements Runnable {
 
   public void run() {
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     try {
       i++;
@@ -583,23 +566,21 @@ class ThreadReadModifyWriteTask implements Runnable {
     } catch (Exception e) {
       TestUtility.printer("caught exception: " + e);
     } finally {
-      TestUtility.printer("returning from " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
     }
     // return((new Integer(i)).toString());
   }
 }
 
+
 class ThreadReadingFileTask implements Callable<String> {
-  ThreadReadingFileTask() {
-  }
+  ThreadReadingFileTask() {}
 
   public String call() {
     File file = new File("bob.jpg");
     FileInputStream reader = null;
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     try {
       reader = new FileInputStream(file);
@@ -629,16 +610,15 @@ class ThreadReadingFileTask implements Callable<String> {
         reader.close();
       } catch (Exception e) {
       }
-      TestUtility.printer("returning from " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
     }
     return null;
   }
 }
 
+
 class ThreadWritingFileTask implements Callable<String> {
-  ThreadWritingFileTask() {
-  }
+  ThreadWritingFileTask() {}
 
   public String call() {
     File file = new File("bob.jpg");
@@ -646,8 +626,7 @@ class ThreadWritingFileTask implements Callable<String> {
     FileInputStream reader = null;
     FileOutputStream writer = null;
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     try {
       reader = new FileInputStream(file);
@@ -658,8 +637,8 @@ class ThreadWritingFileTask implements Callable<String> {
     }
     try {
       int c = 0;
-      TestUtility.printer("starting to read:" + file.getName()
-      + " starting to write:" + fileOut.getName());
+      TestUtility.printer(
+          "starting to read:" + file.getName() + " starting to write:" + fileOut.getName());
       while ((c = reader.read()) != -1) {
         byte b = (byte) c;
         // TestUtility.printer( "byte read: " + b + " character read: " + c +
@@ -681,21 +660,20 @@ class ThreadWritingFileTask implements Callable<String> {
         writer.close();
       } catch (Exception e) {
       }
-      TestUtility.printer("returning from " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
     }
     return null;
   }
 }
 
+
 /**
- * ForkBlur implements a simple horizontal image blur. It averages pixels in the
- * source array and writes them to a destination array. The sThreshold value
- * determines whether the blurring will be performed directly or split into two
- * tasks.
+ * ForkBlur implements a simple horizontal image blur. It averages pixels in the source array and
+ * writes them to a destination array. The sThreshold value determines whether the blurring will be
+ * performed directly or split into two tasks.
  * 
- * This is not the recommended way to blur images; it is only intended to
- * illustrate the use of the Fork/Join framework.
+ * This is not the recommended way to blur images; it is only intended to illustrate the use of the
+ * Fork/Join framework.
  */
 @SuppressWarnings("serial")
 class ForkBlur extends RecursiveAction {
@@ -728,8 +706,7 @@ class ForkBlur extends RecursiveAction {
       }
 
       // Re-assemble destination pixel.
-      int dpixel = (0xff000000) | (((int) rt) << 16) | (((int) gt) << 8)
-          | (((int) bt) << 0);
+      int dpixel = (0xff000000) | (((int) rt) << 16) | (((int) gt) << 8) | (((int) bt) << 0);
       mDestination[index] = dpixel;
     }
   }
@@ -739,8 +716,7 @@ class ForkBlur extends RecursiveAction {
   @Override
   protected void compute() {
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     if (mLength < sThreshold) {
       computeDirectly();
@@ -749,10 +725,11 @@ class ForkBlur extends RecursiveAction {
 
     int split = mLength / 2;
 
-    invokeAll(new ForkBlur(mSource, mStart, split, mDestination), new ForkBlur(
-        mSource, mStart + split, mLength - split, mDestination));
+    invokeAll(new ForkBlur(mSource, mStart, split, mDestination),
+        new ForkBlur(mSource, mStart + split, mLength - split, mDestination));
   }
 }
+
 
 // class TestRejectedTask implements Callable<String>
 class TestRejectedTask implements Runnable {
@@ -768,13 +745,11 @@ class TestRejectedTask implements Runnable {
     int ctr = 0;
     boolean keepGoing = true;
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     synchronized (staticCtr) {
       staticCtr.incrementAndGet();
-      TestUtility.printer("staticCtr=" + staticCtr.get() + ":starting...:"
-          + this.toString());
+      TestUtility.printer("staticCtr=" + staticCtr.get() + ":starting...:" + this.toString());
     }
     while (keepGoing) {
       try {
@@ -797,10 +772,9 @@ class TestRejectedTask implements Runnable {
         // TestUtility.printer( "spinning...ctr:" + ctr );
         ctr++;
       } catch (Exception e) {
-        TestUtility.printer("staticCtr=" + staticCtr.get() + ":"
-            + "caught exception: " + e + ":" + this.toString());
-        TestUtility.printer("returning from "
-            + Thread.currentThread().getName() + " thread...");
+        TestUtility.printer("staticCtr=" + staticCtr.get() + ":" + "caught exception: " + e + ":"
+            + this.toString());
+        TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
         // return(System.currentTimeMillis() + ":" + "thread->" +
         // Thread.currentThread().getName());
       } finally {
@@ -809,7 +783,8 @@ class TestRejectedTask implements Runnable {
   }
 }
 
-//class TestRejectedTask implements Callable<String>
+
+// class TestRejectedTask implements Callable<String>
 class TestJNIJNATask implements Runnable {
 
   static private AtomicInteger staticCtr = new AtomicInteger(0);
@@ -820,7 +795,7 @@ class TestJNIJNATask implements Runnable {
 
   // public String call()
   public void run() {
-    HelloJNI.mainJNICall(3,"-tab2space","2","inputTestFile-JNI.txt");
+    HelloJNI.mainJNICall(3, "-tab2space", "2", "inputTestFile-JNI.txt");
   }
 }
 
@@ -839,13 +814,11 @@ class TestComputationTask implements Runnable {
   public void run() {
     int ctr = 0;
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     synchronized (staticCtr) {
       staticCtr.incrementAndGet();
-      TestUtility.printer("staticCtr=" + staticCtr.get() + ":starting...:"
-          + this.toString());
+      TestUtility.printer("staticCtr=" + staticCtr.get() + ":starting...:" + this.toString());
     }
     while (ctr <= 10000) {
       try {
@@ -866,10 +839,9 @@ class TestComputationTask implements Runnable {
         // TestUtility.printer( "spinning...ctr:" + ctr );
         ctr++;
       } catch (Exception e) {
-        TestUtility.printer("staticCtr=" + staticCtr.get() + ":"
-            + "caught exception: " + e + ":" + this.toString());
-        TestUtility.printer("returning from "
-            + Thread.currentThread().getName() + " thread...");
+        TestUtility.printer("staticCtr=" + staticCtr.get() + ":" + "caught exception: " + e + ":"
+            + this.toString());
+        TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
         // return(System.currentTimeMillis() + ":" + "thread->" +
         // Thread.currentThread().getName());
       } finally {
@@ -878,14 +850,15 @@ class TestComputationTask implements Runnable {
   }
 }
 
+
 class B {
-  public B() {
-  }
+  public B() {}
 
   void func() {
     TestUtility.printer("Running B.func...");
   }
 }
+
 
 class A {
   private static B b = null;
@@ -908,6 +881,7 @@ class A {
   }
 }
 
+
 class MyClassLoader extends ClassLoader {
 
   public MyClassLoader(ClassLoader parent) {
@@ -916,8 +890,7 @@ class MyClassLoader extends ClassLoader {
   }
 
   @Override
-  public Class<?> loadClass(String name, boolean resolve)
-      throws ClassNotFoundException {
+  public Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     TestUtility.printer("MyClassLoader:loading class '" + name + "'");
     return super.loadClass(name, resolve);
   }
@@ -929,13 +902,16 @@ class MyClassLoader extends ClassLoader {
   }
 }
 
+
 class DefaultUncaughtExceptionHander implements UncaughtExceptionHandler {
 
   public void uncaughtException(Thread t, Throwable e) {
-    TestUtility.printer("******* Thread " + t.getName() + " has thrown an uncaught exception ******* " + e);
+    TestUtility.printer(
+        "******* Thread " + t.getName() + " has thrown an uncaught exception ******* " + e);
   }
 
 }
+
 
 public class BinaryTransferServer {
 
@@ -984,11 +960,9 @@ public class BinaryTransferServer {
     pool.invoke(fb);
     long endTime = System.currentTimeMillis();
 
-    TestUtility.printer("Image blur took " + (endTime - startTime)
-        + " milliseconds.");
+    TestUtility.printer("Image blur took " + (endTime - startTime) + " milliseconds.");
 
-    BufferedImage dstImage = new BufferedImage(w, h,
-        BufferedImage.TYPE_INT_ARGB);
+    BufferedImage dstImage = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
     dstImage.setRGB(0, 0, w, h, dst, 0, w);
 
     return dstImage;
@@ -1052,13 +1026,12 @@ public class BinaryTransferServer {
     }
 
     public void run() {
-      String importantInfo[] = { "Mares eat oats", "Does eat oats",
-          "Little lambs eat ivy", "A kid will eat ivy too", "wouldn't you" };
+      String importantInfo[] = {"Mares eat oats", "Does eat oats", "Little lambs eat ivy",
+          "A kid will eat ivy too", "wouldn't you"};
       @SuppressWarnings("unused")
       Random random = new Random();
 
-      TestUtility.printer("starting " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
       for (int i = 0; i < importantInfo.length; i++) {
         drop.put(importantInfo[i]);
@@ -1070,8 +1043,7 @@ public class BinaryTransferServer {
         }
       }
       drop.put("DONE");
-      TestUtility.printer("returning from " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
     }
   }
 
@@ -1088,11 +1060,9 @@ public class BinaryTransferServer {
       @SuppressWarnings("unused")
       Random random = new Random();
 
-      TestUtility.printer("starting " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
-      for (String message = drop.take(); !message.equals("DONE"); message = drop
-          .take()) {
+      for (String message = drop.take(); !message.equals("DONE"); message = drop.take()) {
         TestUtility.printer("MESSAGE RECEIVED: " + message);
         try {
           // Thread.sleep(random.nextInt(5000));
@@ -1100,8 +1070,7 @@ public class BinaryTransferServer {
         } catch (InterruptedException e) {
         }
       }
-      TestUtility.printer("returning from " + Thread.currentThread().getName()
-          + " thread...");
+      TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
     }
   }
 
@@ -1123,20 +1092,19 @@ public class BinaryTransferServer {
   private void startListener() {
     try {
 
-      aServerPortListenerFuture = aBinaryTransferServerPortListenerThreadPool
-          .submit(new BinaryTransferServerPortListenerTask(
-              aBinaryTransferThreadPool, aServerSocket, port));
+      aServerPortListenerFuture = aBinaryTransferServerPortListenerThreadPool.submit(
+          new BinaryTransferServerPortListenerTask(aBinaryTransferThreadPool, aServerSocket, port));
 
       try {
         // give listener thread enough time to run...
-        TestUtility.printer("aServerPortListenerFuture: waiting a second before getting future object and timing out");
+        TestUtility.printer(
+            "aServerPortListenerFuture: waiting a second before getting future object and timing out");
         Thread.sleep(1000);
         String aStr = aServerPortListenerFuture.get(1L, TimeUnit.MILLISECONDS);
       } catch (Exception e) {
         TestUtility.printer("aServerPortListenerFuture: "
-            + ((aServerPortListenerFuture == null) ? "null"
-                : aServerPortListenerFuture.toString()) + ":"
-                + "caught exception: " + e);
+            + ((aServerPortListenerFuture == null) ? "null" : aServerPortListenerFuture.toString())
+            + ":" + "caught exception: " + e);
       }
     } catch (Exception e) {
       TestUtility.printer("System exception! " + e);
@@ -1150,11 +1118,10 @@ public class BinaryTransferServer {
     if (successfulyCancelled) {
       TestUtility.printer("computation cancelled: aServerPortListenerFuture");
     } else {
-      TestUtility
-      .printer("computation *not* cancelled: aServerPortListenerFuture");
+      TestUtility.printer("computation *not* cancelled: aServerPortListenerFuture");
     }
     try {
-      //can close a listening socket while in accept
+      // can close a listening socket while in accept
       aServerSocket.close();
       boolean isClosed = aServerSocket.isClosed();
       TestUtility.printer("aServerSocket.isClosed():" + isClosed);
@@ -1166,15 +1133,15 @@ public class BinaryTransferServer {
   }
 
   private void testSocketListenerThreadCancellations() {
-    ThreadFactory aBinaryTransferServerPortListenerThreadFactory = new BinaryTransferServerPortListenerThreadFactory(
-        "serverPortListener");
-    aBinaryTransferServerPortListenerThreadPool = Executors.newFixedThreadPool(
-        1, aBinaryTransferServerPortListenerThreadFactory);
+    ThreadFactory aBinaryTransferServerPortListenerThreadFactory =
+        new BinaryTransferServerPortListenerThreadFactory("serverPortListener");
+    aBinaryTransferServerPortListenerThreadPool =
+        Executors.newFixedThreadPool(1, aBinaryTransferServerPortListenerThreadFactory);
 
-    ThreadFactory aBinaryTransferThreadFactory = new BinaryTransferServerThreadFactory(
-        BinaryTransferServer.class.getSimpleName());
-    aBinaryTransferThreadPool = Executors.newFixedThreadPool(Runtime
-        .getRuntime().availableProcessors(), aBinaryTransferThreadFactory);
+    ThreadFactory aBinaryTransferThreadFactory =
+        new BinaryTransferServerThreadFactory(BinaryTransferServer.class.getSimpleName());
+    aBinaryTransferThreadPool = Executors.newFixedThreadPool(
+        Runtime.getRuntime().availableProcessors(), aBinaryTransferThreadFactory);
 
     this.startListener();
     try {
@@ -1182,8 +1149,7 @@ public class BinaryTransferServer {
       Thread.sleep(10000);
       TestUtility.printer("Waking up now...");
     } catch (InterruptedException e) {
-      TestUtility
-      .printer("InterruptedException: calling stopListener...closing accept socket");
+      TestUtility.printer("InterruptedException: calling stopListener...closing accept socket");
       this.stopListener();
     } finally {
       // This is not necessary if you have the listener threads set as daemon so
@@ -1197,13 +1163,11 @@ public class BinaryTransferServer {
   }
 
   private void testFileReadThreadCancellations() {
-    ThreadFactory aMiscThreadReadFileFactory = new MiscThreadFactory(
-        "threadReadFileTest");
-    ExecutorService aMiscThreadReadingFileThreadPool = Executors
-        .newFixedThreadPool(10, aMiscThreadReadFileFactory);
+    ThreadFactory aMiscThreadReadFileFactory = new MiscThreadFactory("threadReadFileTest");
+    ExecutorService aMiscThreadReadingFileThreadPool =
+        Executors.newFixedThreadPool(10, aMiscThreadReadFileFactory);
 
-    Future<String> aFuture = aMiscThreadReadingFileThreadPool
-        .submit(new ThreadReadingFileTask());
+    Future<String> aFuture = aMiscThreadReadingFileThreadPool.submit(new ThreadReadingFileTask());
     try {
       Thread.sleep(200);
       aFuture.cancel(true);
@@ -1215,13 +1179,11 @@ public class BinaryTransferServer {
   }
 
   private void testFileWriteThreadCancellations() {
-    ThreadFactory aMiscThreadWriteFileFactory = new MiscThreadFactory(
-        "threadWriteFileTest");
-    ExecutorService aMiscThreadWritingFileThreadPool = Executors
-        .newFixedThreadPool(10, aMiscThreadWriteFileFactory);
+    ThreadFactory aMiscThreadWriteFileFactory = new MiscThreadFactory("threadWriteFileTest");
+    ExecutorService aMiscThreadWritingFileThreadPool =
+        Executors.newFixedThreadPool(10, aMiscThreadWriteFileFactory);
 
-    Future<String> aFuture = aMiscThreadWritingFileThreadPool
-        .submit(new ThreadWritingFileTask());
+    Future<String> aFuture = aMiscThreadWritingFileThreadPool.submit(new ThreadWritingFileTask());
 
     try {
       Thread.sleep(10);
@@ -1259,13 +1221,12 @@ public class BinaryTransferServer {
   private void testBasicThreadCancellations() {
 
     ThreadFactory aCancellerThreadFactory = new MiscThreadFactory("canceller");
-    aCancellerThreadPool = Executors.newFixedThreadPool(2,
-        aCancellerThreadFactory);
+    aCancellerThreadPool = Executors.newFixedThreadPool(2, aCancellerThreadFactory);
 
-    ThreadFactory aScheduledCancellerThreadFactory = new MiscThreadFactory(
-        "scheduledCanceller-NotUsed");
-    aScheduledTaskThreadPool = Executors.newScheduledThreadPool(10,
-        aScheduledCancellerThreadFactory);
+    ThreadFactory aScheduledCancellerThreadFactory =
+        new MiscThreadFactory("scheduledCanceller-NotUsed");
+    aScheduledTaskThreadPool =
+        Executors.newScheduledThreadPool(10, aScheduledCancellerThreadFactory);
 
     this.startCanceller();
     try {
@@ -1277,8 +1238,7 @@ public class BinaryTransferServer {
       this.stopCancellerThreadPool();
       long startTime = System.currentTimeMillis();
       long currentTime = System.currentTimeMillis();
-      while (!aCancellerThreadPool.isTerminated()
-          && (currentTime - startTime < 1000)) {
+      while (!aCancellerThreadPool.isTerminated() && (currentTime - startTime < 1000)) {
         try {
           Thread.sleep(1);
           currentTime = System.currentTimeMillis();
@@ -1299,13 +1259,11 @@ public class BinaryTransferServer {
     int keepAliveTime = 10;
     int queueSize = 2;
     RejectedExecutionHandlerImpl rejectionHandler = new RejectedExecutionHandlerImpl();
-    ThreadFactory aRejectedTaskThreadFactory = new MiscThreadFactory(
-        "rejectedTask");
+    ThreadFactory aRejectedTaskThreadFactory = new MiscThreadFactory("rejectedTask");
     ThreadPoolExecutor aRejectedTaskThreadPool = null;
-    aRejectedTaskThreadPool = new ThreadPoolExecutor(numCoreThreads,
-        numMaxThreads, keepAliveTime, TimeUnit.SECONDS,
-        new ArrayBlockingQueue<Runnable>(queueSize),
-        aRejectedTaskThreadFactory, rejectionHandler);
+    aRejectedTaskThreadPool = new ThreadPoolExecutor(numCoreThreads, numMaxThreads, keepAliveTime,
+        TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(queueSize), aRejectedTaskThreadFactory,
+        rejectionHandler);
 
     Future<?> aFuture = null;
 
@@ -1324,29 +1282,24 @@ public class BinaryTransferServer {
     aFuture = aRejectedTaskThreadPool.submit(new TestRejectedTask());
     TestUtility.printer("suspected rejected task: " + aFuture.toString());
 
-    TestUtility.threadPoolMonitor("aRejectedTaskThreadPool",
-        aRejectedTaskThreadPool);
+    TestUtility.threadPoolMonitor("aRejectedTaskThreadPool", aRejectedTaskThreadPool);
     aRejectedTaskThreadPool.shutdownNow();
     long startTime = System.currentTimeMillis();
     long currentTime = System.currentTimeMillis();
-    while (!aRejectedTaskThreadPool.isTerminated()
-        && (currentTime - startTime < 1000)) {
+    while (!aRejectedTaskThreadPool.isTerminated() && (currentTime - startTime < 1000)) {
       try {
         Thread.sleep(1000);
-        TestUtility
-        .printer("waiting for aRejectedTaskThreadPool to terminate...");
+        TestUtility.printer("waiting for aRejectedTaskThreadPool to terminate...");
         currentTime = System.currentTimeMillis();
       } catch (InterruptedException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
       }
     }
-    TestUtility.threadPoolMonitor("aRejectedTaskThreadPool",
-        aRejectedTaskThreadPool);
+    TestUtility.threadPoolMonitor("aRejectedTaskThreadPool", aRejectedTaskThreadPool);
     aFuture = aRejectedTaskThreadPool.submit(new TestRejectedTask());
     TestUtility.printer("suspected rejected task: " + aFuture.toString());
-    TestUtility.threadPoolMonitor("aRejectedTaskThreadPool",
-        aRejectedTaskThreadPool);
+    TestUtility.threadPoolMonitor("aRejectedTaskThreadPool", aRejectedTaskThreadPool);
 
   }
 
@@ -1356,71 +1309,51 @@ public class BinaryTransferServer {
     int keepAliveTime = 10;
     int queueSize = 2;
     RejectedExecutionHandlerImpl rejectionHandler = new RejectedExecutionHandlerImpl();
-    ThreadFactory aJNIJNATaskThreadFactory = new MiscThreadFactory(
-        "JNIJNATask");
+    ThreadFactory aJNIJNATaskThreadFactory = new MiscThreadFactory("JNIJNATask");
     ThreadPoolExecutor aJNIJNATaskThreadPool = null;
-    aJNIJNATaskThreadPool = new ThreadPoolExecutor(numCoreThreads,
-        numMaxThreads, keepAliveTime, TimeUnit.SECONDS,
-        new ArrayBlockingQueue<Runnable>(queueSize),
-        aJNIJNATaskThreadFactory, rejectionHandler);
+    aJNIJNATaskThreadPool = new ThreadPoolExecutor(numCoreThreads, numMaxThreads, keepAliveTime,
+        TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(queueSize), aJNIJNATaskThreadFactory,
+        rejectionHandler);
 
     Future<?> aFuture = null;
 
-     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
     aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
-    aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());		
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
-    aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());		
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
-    aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());		
-    TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-        aJNIJNATaskThreadPool);
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
+    aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
+    aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
+    aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
+    aFuture = aJNIJNATaskThreadPool.submit(new TestJNIJNATask());
+    TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
 
     int ctr = 1000;
-    while(ctr > 0)
-    {
+    while (ctr > 0) {
       try {
         Thread.sleep(1000);
       } catch (InterruptedException e) {
@@ -1428,13 +1361,11 @@ public class BinaryTransferServer {
         e.printStackTrace();
       }
 
-      TestUtility.threadPoolMonitor("aJNIJNATaskThread",
-          aJNIJNATaskThreadPool);
+      TestUtility.threadPoolMonitor("aJNIJNATaskThread", aJNIJNATaskThreadPool);
 
       ctr--;
 
-      if(aJNIJNATaskThreadPool.getActiveCount() == 0)
-      {
+      if (aJNIJNATaskThreadPool.getActiveCount() == 0) {
         ctr = 0;
       }
     }
@@ -1445,24 +1376,21 @@ public class BinaryTransferServer {
   }
 
   private void testThreadPoolWorkerThrowingException() {
-    ThreadFactory aMiscThreadThrowingExceptionFactory = new MiscThreadFactory(
-        "threadThrowingExceptionTest");
-    ExecutorService aMiscThreadThrowingExceptionThreadPool = Executors
-        .newFixedThreadPool(10, aMiscThreadThrowingExceptionFactory);
+    ThreadFactory aMiscThreadThrowingExceptionFactory =
+        new MiscThreadFactory("threadThrowingExceptionTest");
+    ExecutorService aMiscThreadThrowingExceptionThreadPool =
+        Executors.newFixedThreadPool(10, aMiscThreadThrowingExceptionFactory);
 
     Collection<Future> aFutures = new ArrayList<>();
     for (int i = 0; i < 10; i++) {
-      aFutures.add(aMiscThreadThrowingExceptionThreadPool
-          .submit(new ThreadThrowingExceptionTask()));
+      aFutures
+          .add(aMiscThreadThrowingExceptionThreadPool.submit(new ThreadThrowingExceptionTask()));
     }
 
-    for( Future aFuture : aFutures ) {
-      try
-      {
+    for (Future aFuture : aFutures) {
+      try {
         TestUtility.printer("task returned: " + aFuture.get(1000L, TimeUnit.MILLISECONDS));
-      }
-      catch(Throwable t)
-      {
+      } catch (Throwable t) {
         TestUtility.printer("Caught throwable: " + t);
       }
     }
@@ -1471,16 +1399,15 @@ public class BinaryTransferServer {
 
     Thread aThreadC = new Thread(new ThreadThrowingExceptionTask());
     aThreadC.start();
-    TestUtility.printer("shutting down  "
-        + aMiscThreadThrowingExceptionThreadPool + " thread pool...");
+    TestUtility
+        .printer("shutting down  " + aMiscThreadThrowingExceptionThreadPool + " thread pool...");
     aMiscThreadThrowingExceptionThreadPool.shutdownNow();
   }
 
   private void testThreadDataModificationConcurrency() {
-    ThreadFactory aMiscThreadReadModifyWriteFactory = new MiscThreadFactory(
-        "readModifyWriteTest");
-    ExecutorService aMiscThreadReadModifyWriteThreadPool = Executors
-        .newFixedThreadPool(10, aMiscThreadReadModifyWriteFactory);
+    ThreadFactory aMiscThreadReadModifyWriteFactory = new MiscThreadFactory("readModifyWriteTest");
+    ExecutorService aMiscThreadReadModifyWriteThreadPool =
+        Executors.newFixedThreadPool(10, aMiscThreadReadModifyWriteFactory);
     ThreadReadModifyWriteTask aRMWVar = new ThreadReadModifyWriteTask();
     for (int i = 0; i < 100; i++) {
       aMiscThreadReadModifyWriteThreadPool.submit(aRMWVar);
@@ -1489,15 +1416,19 @@ public class BinaryTransferServer {
   }
 
   private void testForkJoin() {
-    String srcName = "C:\\Users\\rob\\Desktop\\temp\\photosFromBkup\\1966\\CertificateOfBaptism.jpg";
+    String srcName =
+        "C:\\Users\\rob\\Desktop\\temp\\photosFromBkup\\1966\\CertificateOfBaptism.jpg";
     // srcName = "C:\\Users\\rob\\Desktop\\bob.jpg";
     // srcName =
-    // "H:\\Google Drive\\work-career\\03-ProfDev\\10-misc\\java_source1of1\\eclipseWorkspace\\misc\\bob.jpg";
+    // "H:\\Google
+    // Drive\\work-career\\03-ProfDev\\10-misc\\java_source1of1\\eclipseWorkspace\\misc\\bob.jpg";
     srcName = "bob.jpg";
-    String dstName = "C:\\Users\\rob\\Desktop\\temp\\photosFromBkup\\1966\\blurred-CertificateOfBaptism.jpg";
+    String dstName =
+        "C:\\Users\\rob\\Desktop\\temp\\photosFromBkup\\1966\\blurred-CertificateOfBaptism.jpg";
     // dstName = "C:\\Users\\rob\\Desktop\\blurred-bob.jpg";
     // dstName =
-    // "H:\\Google Drive\\work-career\\03-ProfDev\\10-misc\\java_source1of1\\eclipseWorkspace\\misc\\bob-blurred.jpg";
+    // "H:\\Google
+    // Drive\\work-career\\03-ProfDev\\10-misc\\java_source1of1\\eclipseWorkspace\\misc\\bob-blurred.jpg";
     dstName = "bob-blurred.jpg";
 
     try {
@@ -1522,26 +1453,22 @@ public class BinaryTransferServer {
     int keepAliveTime = 10;
     int queueSize = 1;
     RejectedExecutionHandlerImpl rejectionHandler = new RejectedExecutionHandlerImpl();
-    ThreadFactory aComputationTaskThreadFactory = new MiscThreadFactory(
-        "computationTask");
+    ThreadFactory aComputationTaskThreadFactory = new MiscThreadFactory("computationTask");
     ThreadPoolExecutor aComputationTaskThreadPool = null;
-    aComputationTaskThreadPool = new ThreadPoolExecutor(numCoreThreads,
-        numMaxThreads, keepAliveTime, TimeUnit.SECONDS,
-        new ArrayBlockingQueue<Runnable>(queueSize),
+    aComputationTaskThreadPool = new ThreadPoolExecutor(numCoreThreads, numMaxThreads,
+        keepAliveTime, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(queueSize),
         aComputationTaskThreadFactory, rejectionHandler);
 
     Future<?> aFuture1 = null;
     Future<?> aFuture2 = null;
 
-    TestUtility.threadPoolMonitor("aComputationTaskThreadPool",
-        aComputationTaskThreadPool);
+    TestUtility.threadPoolMonitor("aComputationTaskThreadPool", aComputationTaskThreadPool);
     TestUtility.printer("starting to run both tasks in parallel ");
     long startTime = System.currentTimeMillis();
     aFuture1 = aComputationTaskThreadPool.submit(new TestComputationTask());
     aFuture2 = aComputationTaskThreadPool.submit(new TestComputationTask());
 
-    TestUtility.threadPoolMonitor("aComputationTaskThreadPool",
-        aComputationTaskThreadPool);
+    TestUtility.threadPoolMonitor("aComputationTaskThreadPool", aComputationTaskThreadPool);
 
     try {
       aFuture1.get();
@@ -1554,11 +1481,9 @@ public class BinaryTransferServer {
       e.printStackTrace();
     }
     long endTime = System.currentTimeMillis();
-    TestUtility.printer("time to run both tasks in parallel: "
-        + (endTime - startTime) + "ms");
+    TestUtility.printer("time to run both tasks in parallel: " + (endTime - startTime) + "ms");
 
-    TestUtility.threadPoolMonitor("aComputationTaskThreadPool",
-        aComputationTaskThreadPool);
+    TestUtility.threadPoolMonitor("aComputationTaskThreadPool", aComputationTaskThreadPool);
 
     TestUtility.printer("starting to run both tasks in series ");
     startTime = System.currentTimeMillis();
@@ -1567,23 +1492,20 @@ public class BinaryTransferServer {
     Runnable task2 = new TestComputationTask();
     task2.run();
     endTime = System.currentTimeMillis();
-    TestUtility.printer("time to run both tasks in series: "
-        + (endTime - startTime) + "ms");
+    TestUtility.printer("time to run both tasks in series: " + (endTime - startTime) + "ms");
 
-    TestUtility.threadPoolMonitor("aComputationTaskThreadPool",
-        aComputationTaskThreadPool);
+    TestUtility.threadPoolMonitor("aComputationTaskThreadPool", aComputationTaskThreadPool);
 
     startTime = System.currentTimeMillis();
     long currentTime = System.currentTimeMillis();
     aComputationTaskThreadPool.shutdownNow();
 
-    TestUtility.threadPoolMonitor("***aComputationTaskThreadPool",
-        aComputationTaskThreadPool);
+    TestUtility.threadPoolMonitor("***aComputationTaskThreadPool", aComputationTaskThreadPool);
 
     long aWaitTime = 1;
     try {
-      TestUtility.printer("waiting " + aWaitTime
-          + " milliseconds for aComputationTaskThreadPool to terminate...");
+      TestUtility.printer(
+          "waiting " + aWaitTime + " milliseconds for aComputationTaskThreadPool to terminate...");
       Thread.sleep(aWaitTime);
     } catch (InterruptedException e1) {
       // TODO Auto-generated catch block
@@ -1605,8 +1527,7 @@ public class BinaryTransferServer {
       }
     }
 
-    TestUtility.threadPoolMonitor("aComputationTaskThreadPool",
-        aComputationTaskThreadPool);
+    TestUtility.threadPoolMonitor("aComputationTaskThreadPool", aComputationTaskThreadPool);
 
   }
 
@@ -1647,7 +1568,7 @@ public class BinaryTransferServer {
     GenericsType<String> g2 = new GenericsType<>();
     g2.set("Pankaj");
 
-    boolean isEqual = GenericsMethods.<String> isEqual(g1, g2);
+    boolean isEqual = GenericsMethods.<String>isEqual(g1, g2);
     // above statement can be written simply as
     isEqual = GenericsMethods.isEqual(g1, g2);
     TestUtility.printer("isEqual = GenericsMethods.isEqual(g1, g2):" + isEqual);
@@ -1687,41 +1608,38 @@ public class BinaryTransferServer {
   <T> T invoke(Callable<T> c) throws Exception {
     return c.call();
   }
-  
+
   private void testClosuresAndLambdaExpressions() {
     // available in JSE8
     System.out.println("lambda expressions test (JSE8)");
 
     List<Person> roster = null;
-    
-    Person.printPersons(
-        roster,
-        (Person p) -> p.getGender() == Person.Gender.MALE
-            && p.getAge() >= 18
-            && p.getAge() <= 25
-    );
-    
+
+    Person.printPersons(roster,
+        (Person p) -> p.getGender() == Person.Gender.MALE && p.getAge() >= 18 && p.getAge() <= 25);
+
     try {
-      //see: https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
+      // see: https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
       // the lambda expr () -> "done" is equivalent to:
-      // String s = invoke(                          
-      //     new Callable<String>(){                 
-      //       @Override                             
-      //       public String call(){return("done");} 
-      //     });                                     
+      // String s = invoke(
+      // new Callable<String>(){
+      // @Override
+      // public String call(){return("done");}
+      // });
       String s = invoke(() -> "done(via lambda expression)");
       System.out.println(s);
     } catch (Exception e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
-        
+
     try {
-      String s = invoke(
-          new Callable<String>(){
-            @Override 
-            public String call(){return("done(via anonymous class)");}
-          });
+      String s = invoke(new Callable<String>() {
+        @Override
+        public String call() {
+          return ("done(via anonymous class)");
+        }
+      });
       System.out.println(s);
     } catch (Exception e) {
       // TODO Auto-generated catch block
@@ -1737,23 +1655,21 @@ public class BinaryTransferServer {
 
     try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
-        //1. filter line 3
-        //2. convert all content to upper case
-        //3. convert it into a List
-        list = stream
-                .filter(line -> !line.startsWith("line3"))
-                .map(String::toUpperCase)
-                .collect(Collectors.toList());
+      // 1. filter line 3
+      // 2. convert all content to upper case
+      // 3. convert it into a List
+      list = stream.filter(line -> !line.startsWith("line3")).map(String::toUpperCase)
+          .collect(Collectors.toList());
 
     } catch (IOException e) {
-        e.printStackTrace();
+      e.printStackTrace();
     }
 
     list.forEach(System.out::println);
 
   }
 
-  
+
   private void testStaticVariableInitialization() {
     A a = new A();
     A b = new A();
@@ -1768,8 +1684,7 @@ public class BinaryTransferServer {
   }
 
   private void testMultipleClassLoaders() {
-    ClassLoader defaultClassLoader = Thread.currentThread()
-        .getContextClassLoader();
+    ClassLoader defaultClassLoader = Thread.currentThread().getContextClassLoader();
     Collection<URL> classPathURL = new LinkedList<URL>();
     ClassLoader currentClassLoader = defaultClassLoader;
     URL lURL = null;
@@ -1779,20 +1694,20 @@ public class BinaryTransferServer {
     } catch (Exception e) {
     }
     classPathURL.add(lURL);
-    SACURLClassLoader loader1 = new SACURLClassLoader(
-        classPathURL.toArray(new URL[classPathURL.size()]),
-        BinaryTransferServer.class.getClassLoader());
-    SACURLClassLoader loader2 = new SACURLClassLoader(
-        classPathURL.toArray(new URL[classPathURL.size()]),
-        BinaryTransferServer.class.getClassLoader());
+    SACURLClassLoader loader1 =
+        new SACURLClassLoader(classPathURL.toArray(new URL[classPathURL.size()]),
+            BinaryTransferServer.class.getClassLoader());
+    SACURLClassLoader loader2 =
+        new SACURLClassLoader(classPathURL.toArray(new URL[classPathURL.size()]),
+            BinaryTransferServer.class.getClassLoader());
     // SACURLClassLoader loader1 = new
     // SACURLClassLoader(classPathURL.toArray(new URL[classPathURL.size()]),
     // null);
     // SACURLClassLoader loader2 = new
     // SACURLClassLoader(classPathURL.toArray(new URL[classPathURL.size()]),
     // null);
-    SACURLClassLoader loader3 = new SACURLClassLoader(
-        classPathURL.toArray(new URL[classPathURL.size()]), null);
+    SACURLClassLoader loader3 =
+        new SACURLClassLoader(classPathURL.toArray(new URL[classPathURL.size()]), null);
     try {
 
       Class<?> c1 = loader1.loadClass("conceptTesting.ClassForCustomLoading");
@@ -1817,34 +1732,28 @@ public class BinaryTransferServer {
       Thread aThread = new Thread() {
         @Override
         public void run() {
-          ClassLoader currentClassLoader = Thread.currentThread()
-              .getContextClassLoader();
+          ClassLoader currentClassLoader = Thread.currentThread().getContextClassLoader();
 
-          TestUtility
-          .printer("TestClassForCustomLoading.class.getClassLoader()="
+          TestUtility.printer("TestClassForCustomLoading.class.getClassLoader()="
               + ClassForCustomLoading.class.getClassLoader());
 
-          TestUtility.printer("CLASSPATH for ClassForCustomLoading: "
-              + Arrays.toString(((URLClassLoader) ClassForCustomLoading.class
-                  .getClassLoader()).getURLs()));
+          TestUtility.printer("CLASSPATH for ClassForCustomLoading: " + Arrays
+              .toString(((URLClassLoader) ClassForCustomLoading.class.getClassLoader()).getURLs()));
 
           TestUtility.printer("currentClassLoader=" + currentClassLoader
               + " ClassForCustomLoading.class.getClassLoader()="
               + ClassForCustomLoading.class.getClassLoader());
 
-          TestUtility.printer(ClassForCustomLoading.class
-              .getClassLoader()
-              .getResource(
-                  ClassForCustomLoading.class.getName().replace('.', '/')
-                  + ".class").toString());
+          TestUtility.printer(ClassForCustomLoading.class.getClassLoader()
+              .getResource(ClassForCustomLoading.class.getName().replace('.', '/') + ".class")
+              .toString());
 
           ClassForCustomLoading c3 = new ClassForCustomLoading();
           TestUtility.printer("c3.toString()= " + c3.toString());
         }
       };
       Thread.currentThread().setContextClassLoader(loader3);
-      aThread.setContextClassLoader(Thread.currentThread()
-          .getContextClassLoader());
+      aThread.setContextClassLoader(Thread.currentThread().getContextClassLoader());
       aThread.setDaemon(false);
       aThread.setPriority(Thread.MAX_PRIORITY);
       aThread.setName("THREAD:CHANGE-CLASS-LOADER");
@@ -1918,8 +1827,7 @@ public class BinaryTransferServer {
 
   private int fibonacci(int number) {
     if (number < 1) {
-      throw new IllegalArgumentException(
-          "Invalid argument for Fibonacci series: " + number);
+      throw new IllegalArgumentException("Invalid argument for Fibonacci series: " + number);
     }
 
     // base case of recursion
@@ -1959,8 +1867,8 @@ public class BinaryTransferServer {
       Pattern p = Pattern.compile("(.*:*)(.*)(/*.*)");
       Matcher m = p.matcher(aInUrl);
       while (m.find()) {
-        System.out.println("0:" + m.group(0) + ' ' + "1:" + m.group(1) + ' '
-            + "2:" + m.group(2) + ' ' + "3:" + m.group(3));
+        System.out.println("0:" + m.group(0) + ' ' + "1:" + m.group(1) + ' ' + "2:" + m.group(2)
+            + ' ' + "3:" + m.group(3));
       }
     }
 
@@ -1975,37 +1883,34 @@ public class BinaryTransferServer {
   }
 
   // We've spec'd CBC mode, so set up the IV now as part of the algorithm parameters.
-  protected final static IvParameterSpec GOOD_IV_16 = 
-      new IvParameterSpec(
-          new byte[] { 0x0F, 0x0E, 0x0D, 0x0C, 0x0B, 0x0A, 0x09, 0x08, 0x07, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01, 0x00 });
+  protected final static IvParameterSpec GOOD_IV_16 = new IvParameterSpec(new byte[] {0x0F, 0x0E,
+      0x0D, 0x0C, 0x0B, 0x0A, 0x09, 0x08, 0x07, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01, 0x00});
 
-  static
-  {
+  static {
     Security.addProvider(new BouncyCastleProvider());
   }
   private static final byte[] IV = { // Hard coded for now
-      -85, -67, -5, 88, 28, 49, 49, 85,
-      114, 83, -40, 119, -65, 91, 76, 108};
+      -85, -67, -5, 88, 28, 49, 49, 85, 114, 83, -40, 119, -65, 91, 76, 108};
   private static final IvParameterSpec ivSpec = new IvParameterSpec(IV);
 
-  private void testCrypto()
-  {
+  private void testCrypto() {
     String algorithm = "AES/CBC/NoPadding";
     String keyAlgorithm = "AES";
 
     try {
-      // Use BounceyCastle to generate a 128 bit key as it seems LunaProvider generates 256 bit keys as a minimum.
+      // Use BounceyCastle to generate a 128 bit key as it seems LunaProvider generates 256 bit keys
+      // as a minimum.
       KeyGenerator kg = KeyGenerator.getInstance(keyAlgorithm, "BC");
       kg.init(128);
       Key key = kg.generateKey();
 
-      //	    AlgorithmParameters goodParams = AlgorithmParameters.getInstance("IV", "LunaProvider");
-      //	    goodParams.init(GOOD_IV_16);
+      // AlgorithmParameters goodParams = AlgorithmParameters.getInstance("IV", "LunaProvider");
+      // goodParams.init(GOOD_IV_16);
 
       // Create and init an instance of the cipher from Luna.
-      //	    Cipher cipher = Cipher.getInstance(algorithm, "LunaProvider");
+      // Cipher cipher = Cipher.getInstance(algorithm, "LunaProvider");
       Cipher cipher = Cipher.getInstance(algorithm, "BC");
-      //	    cipher.init(Cipher.ENCRYPT_MODE, key, goodParams);
+      // cipher.init(Cipher.ENCRYPT_MODE, key, goodParams);
       cipher.init(Cipher.ENCRYPT_MODE, key, ivSpec);
 
       // Get a basic input block of 16 bytes.
@@ -2028,9 +1933,9 @@ public class BinaryTransferServer {
     } catch (NoSuchProviderException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
-      //    } catch (InvalidParameterSpecException e) {
-      //	    // TODO Auto-generated catch block
-      //	    e.printStackTrace();
+      // } catch (InvalidParameterSpecException e) {
+      // // TODO Auto-generated catch block
+      // e.printStackTrace();
     } catch (NoSuchPaddingException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
@@ -2046,73 +1951,69 @@ public class BinaryTransferServer {
     } catch (BadPaddingException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
-    }		
+    }
   }
-  
-  private int testFinallyClause()
-  {
+
+  private int testFinallyClause() {
     try {
       return 1;
-    }
-    finally
-    {
+    } finally {
       return 2;
     }
   }
 
-  public static void main(String[] args) 
-  {
-    
-    //test push to GitHub
-    
+  public static void main(String[] args) {
+
+    // test push to GitHub
+
     BinaryTransferServer aBinXfrSvc = new BinaryTransferServer();
     MiscFileReadWrite aMiscFileRW = new MiscFileReadWrite();
 
-    TestUtility.printer("starting " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("starting " + Thread.currentThread().getName() + " thread...");
 
     // thread pool interruption stuff...
-//    aBinXfrSvc.testSocketListenerThreadCancellations();//QQQ - this test is used for socket manipulation
-//    		 aBinXfrSvc.testBasicThreadCancellations();
-//    		 aBinXfrSvc.testFileReadThreadCancellations();
-//    		 aBinXfrSvc.testFileWriteThreadCancellations();
+    // aBinXfrSvc.testSocketListenerThreadCancellations();//QQQ - this test is used for socket
+    // manipulation
+    // aBinXfrSvc.testBasicThreadCancellations();
+    // aBinXfrSvc.testFileReadThreadCancellations();
+    // aBinXfrSvc.testFileWriteThreadCancellations();
 
     // notify/wait stuff...
-    //		 aBinXfrSvc.testNotifyWaitThreads();
+    // aBinXfrSvc.testNotifyWaitThreads();
 
     // thread throwing an exception...does it kill the thread requiring the pool
     // to create a new thread...apparently not
-    //		 aBinXfrSvc.testThreadPoolWorkerThrowingException();
+    // aBinXfrSvc.testThreadPoolWorkerThrowingException();
 
     // Read-Modify-Write issue
-    //		 aBinXfrSvc.testThreadDataModificationConcurrency();
+    // aBinXfrSvc.testThreadDataModificationConcurrency();
 
     // Fork-Join sample...seems to require the problem to be solvable via
     // recursion
-    //		 aBinXfrSvc.testForkJoin();
+    // aBinXfrSvc.testForkJoin();
 
     // random access of flat file test...think BitTorrent
     // ...also think of Dropbox blacklist of file hashes...
     // test for random insertion of 'bad byte' in middle of video file
-//    aMiscFileRW.testRandomAccessOfFlatFile();
+    // aMiscFileRW.testRandomAccessOfFlatFile();
 
     // thread pool rejecting task behaviour
-    //		 aBinXfrSvc.testTaskRejected();
+    // aBinXfrSvc.testTaskRejected();
 
     // multiple core test
-    //		 aBinXfrSvc.testTimeToRunTwoTasksInParallelThenInSeries();
+    // aBinXfrSvc.testTimeToRunTwoTasksInParallelThenInSeries();
 
     // generics test - generic classes/generic methods
-    //		 aBinXfrSvc.testGenerics();
+    // aBinXfrSvc.testGenerics();
 
     // closures/"funcptr" and lambda expressions test (JSE8)\
-//    aBinXfrSvc.testClosuresAndLambdaExpressions();
+    // aBinXfrSvc.testClosuresAndLambdaExpressions();
 
     // static variable initialization java - done only once when class is loaded
-    //		 aBinXfrSvc.testStaticVariableInitialization();
+    // aBinXfrSvc.testStaticVariableInitialization();
 
     // test multiple class loaders
-    //		 aBinXfrSvc.testMultipleClassLoaders();
+    // aBinXfrSvc.testMultipleClassLoaders();
 
     // test for JDBC compliance in ttjdbc6.jar
     // TimesTenDriver aTTDriver = new TimesTenDriver();
@@ -2120,45 +2021,43 @@ public class BinaryTransferServer {
     // aTTDriver.jdbcCompliant());
 
     // fizz-buzz
-    //		 aBinXfrSvc.fizzbuzz();
+    // aBinXfrSvc.fizzbuzz();
 
     // simple recursion
-    //		TestUtility.printer( "0!= " + aBinXfrSvc.factorial(0));
-    //		TestUtility.printer( "5!= " + aBinXfrSvc.factorial(5));
-    //		TestUtility.printer( "10th fibonacci number = " + aBinXfrSvc.fibonacci(10));
-    //		TestUtility.printer( "2nd fibonacci number = " + aBinXfrSvc.fibonacci(2));
+    // TestUtility.printer( "0!= " + aBinXfrSvc.factorial(0));
+    // TestUtility.printer( "5!= " + aBinXfrSvc.factorial(5));
+    // TestUtility.printer( "10th fibonacci number = " + aBinXfrSvc.fibonacci(10));
+    // TestUtility.printer( "2nd fibonacci number = " + aBinXfrSvc.fibonacci(2));
 
     // JNI call test - requires 64-bit JVM because dll is 64-bit (built via
     // mingw64...see jni/readme file)
-    //		 HelloJNI.mainJNICall(null);
+    // HelloJNI.mainJNICall(null);
     // String[] argv = {"-tab2space", "2", "inputTestFile-JNI.txt"};
-    //		 HelloJNI.mainJNICall(3,"-tab2space","2","inputTestFile-JNI.txt");
-//    aBinXfrSvc.testJNIJNA();//QQQ - am normally running this test...
-    HelloJNI.mainJNICall(3,"-tab2space","2","inputTestFile-JNI.txt");
+    // HelloJNI.mainJNICall(3,"-tab2space","2","inputTestFile-JNI.txt");
+    // aBinXfrSvc.testJNIJNA();//QQQ - am normally running this test...
+    HelloJNI.mainJNICall(3, "-tab2space", "2", "inputTestFile-JNI.txt");
 
     // SAX Parser Test
-    //		aBinXfrSvc.XMLParseTest();
+    // aBinXfrSvc.XMLParseTest();
 
     // generate XML file
-    //		aBinXfrSvc.spitOutXML();
+    // aBinXfrSvc.spitOutXML();
 
     // test for interrupts/signals/etc
     // aBinXfrSvc.catchSignals();
 
     // test for String split
-    //		aBinXfrSvc.testRegex();
+    // aBinXfrSvc.testRegex();
 
     // test crypto
-    aBinXfrSvc.testCrypto();
+    // aBinXfrSvc.testCrypto();
 
     // test finally clause
-//    int rc = aBinXfrSvc.testFinallyClause();
-//    System.out.printf("rc=%d\n",rc);
+    // int rc = aBinXfrSvc.testFinallyClause();
+    // System.out.printf("rc=%d\n",rc);
 
-    TestUtility
-    .printer("Only non-daemon threads will prevent JVM shutdown at this point...");
-    TestUtility.printer("returning from " + Thread.currentThread().getName()
-        + " thread...");
+    TestUtility.printer("Only non-daemon threads will prevent JVM shutdown at this point...");
+    TestUtility.printer("returning from " + Thread.currentThread().getName() + " thread...");
 
     // The JVM goes away thus all resources are released...thread pools,
     // sockets/file descriptors, etc.

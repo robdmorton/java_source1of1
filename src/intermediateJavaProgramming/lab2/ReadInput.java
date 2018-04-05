@@ -8,8 +8,8 @@ class ReadInput {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     String input = null;
     System.out.print("> ");
-    while ( (input = br.readLine()) != null ) {
-      if ( input.equals("bye") )
+    while ((input = br.readLine()) != null) {
+      if (input.equals("bye"))
         break;
       // ...
       System.out.print("> ");

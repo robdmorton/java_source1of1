@@ -1,22 +1,18 @@
 package introductionToJava;
 
-public class GenericFruit 
-{
+public class GenericFruit {
 
   int sweetness;
-  
-  GenericFruit()
-  {
-    
+
+  GenericFruit() {
+
   }
-  
-  GenericFruit(int i)
-  {
+
+  GenericFruit(int i) {
     sweetness = i;
   }
-  
-  int getSweetness()
-  {
+
+  int getSweetness() {
     return sweetness;
   }
 }

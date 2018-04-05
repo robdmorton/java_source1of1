@@ -1,13 +1,11 @@
 
 
-//Book1-Ch02
+// Book1-Ch02
 
 package introductionToJava;
 
-public class HelloApp
-{
-	public static void main(String[] args)
-	{
-		System.out.println("Hello, world!");
-	}
+public class HelloApp {
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
 }
