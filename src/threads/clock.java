@@ -1,11 +1,12 @@
 package threads;
 
+import java.applet.Applet;
 /**
  * The clock class demonstrates animation with threads
  */
-import java.awt.*;
-import java.applet.*;
-import java.util.*;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.Date;
 
 public class clock extends Applet implements Runnable {
   Font f = new Font("TimesRoman", Font.BOLD, 24);

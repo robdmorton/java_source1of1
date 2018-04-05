@@ -1,11 +1,11 @@
 package JNDI;
 
+import java.util.Hashtable;
+import javax.naming.Binding;
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.Binding;
 import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
-import java.util.Hashtable;
 
 public class JNDISample {
   public static void main(String[] rgstring) {

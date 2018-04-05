@@ -1,8 +1,11 @@
 package advancedJavaProgramming.lab4;
 
-import java.util.*;
-import javax.naming.*;
-import javax.naming.directory.*;
+import java.util.Hashtable;
+import javax.naming.NamingEnumeration;
+import javax.naming.directory.Attribute;
+import javax.naming.directory.Attributes;
+import javax.naming.directory.DirContext;
+import javax.naming.directory.InitialDirContext;
 
 public class Lookup {
   // vars

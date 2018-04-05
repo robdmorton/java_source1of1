@@ -15,11 +15,11 @@ package advancedJavaProgramming.lab5;
 // Fig. 28.23: DisplayAuthors.java
 // Displaying the contents of the authors table.
 import java.sql.Connection;
-import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DisplayAuthors {
   // database URL

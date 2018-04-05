@@ -13,9 +13,12 @@
  *         TODO To change the template for this generated type comment go to Window - Preferences -
  *         Java - Code Style - Code Templates
  */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.io.*;
 
 public class chat {
 

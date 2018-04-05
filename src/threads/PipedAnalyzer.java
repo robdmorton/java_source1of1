@@ -1,7 +1,16 @@
 package threads;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.PipedWriter;
+import java.io.PrintWriter;
+import java.io.Reader;
+import java.io.Writer;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 /*
  * Demonstrate piped streams. Data is read from file and then read and "analysized" by one thread,

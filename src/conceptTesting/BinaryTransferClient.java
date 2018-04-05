@@ -1,9 +1,11 @@
 
 package conceptTesting;
 
-import java.net.*;
 // import java.util.*;
-import java.io.*;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class BinaryTransferClient {
   public static void main(String[] args) {

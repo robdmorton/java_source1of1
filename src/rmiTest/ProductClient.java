@@ -4,10 +4,9 @@ package rmiTest;
  * @version 1.20 2004-08-15
  * @author Cay Horstmann
  */
-
-import java.rmi.*;
-import java.rmi.server.*;
-import javax.naming.*;
+import java.rmi.RMISecurityManager;
+import javax.naming.Context;
+import javax.naming.InitialContext;
 
 /**
  * This program demonstrates how to call a remote method on two objects that are located through the

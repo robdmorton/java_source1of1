@@ -1,6 +1,7 @@
 package intermediateJavaProgramming.lab7.WOS3;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public interface Magical {
   public final int gourdsMin = 4;

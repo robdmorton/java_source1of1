@@ -2,8 +2,6 @@ package conceptTesting;
 
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.security.AccessController;
-import java.security.PrivilegedAction;
 
 class SACURLClassLoader extends URLClassLoader {
   /**

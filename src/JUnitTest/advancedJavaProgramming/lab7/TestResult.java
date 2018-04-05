@@ -1,12 +1,13 @@
 package JUnitTest.advancedJavaProgramming.lab7;
 
 
-import advancedJavaProgramming.lab7.BiblioDocument;
-import advancedJavaProgramming.lab7.Result;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import advancedJavaProgramming.lab7.BiblioDocument;
+import advancedJavaProgramming.lab7.Result;
 
 public class TestResult {
 

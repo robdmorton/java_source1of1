@@ -1,10 +1,11 @@
 
 package conceptTesting;
 
-import java.net.*;
-import java.io.*;
-import java.util.*;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
 // import sockets.*;
+import java.util.Scanner;
 
 public class BartServer2 {
   public static void main(String[] args) {

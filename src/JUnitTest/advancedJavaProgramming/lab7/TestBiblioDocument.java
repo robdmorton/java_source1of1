@@ -1,9 +1,9 @@
 package JUnitTest.advancedJavaProgramming.lab7;
 
 
-import advancedJavaProgramming.lab7.BiblioDocument;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import advancedJavaProgramming.lab7.BiblioDocument;
 
 public class TestBiblioDocument {
   BiblioDocument bibDoc;

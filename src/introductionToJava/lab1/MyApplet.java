@@ -1,7 +1,7 @@
 package introductionToJava.lab1;
 
-import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Graphics;
 
 public class MyApplet extends java.applet.Applet {
   private int numberOfPaints = 0;

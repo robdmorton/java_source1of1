@@ -1,7 +1,8 @@
 package introductionToJava.lab1;
 
 import java.awt.BorderLayout;
-import javax.swing.*;
+import javax.swing.JApplet;
+import javax.swing.JButton;
 
 /** Using swing classes */
 

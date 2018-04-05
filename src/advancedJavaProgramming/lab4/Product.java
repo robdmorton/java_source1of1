@@ -4,8 +4,8 @@ package advancedJavaProgramming.lab4;
  * @version 1.00 1996-09-07
  * @author Cay Horstmann
  */
-
-import java.rmi.*;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 
 /**
  * The interface for remote product objects.

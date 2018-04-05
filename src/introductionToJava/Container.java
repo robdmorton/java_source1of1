@@ -1,6 +1,6 @@
 package introductionToJava;
 
-import java.util.*;
+import java.util.Vector;
 
 public class Container {
   Vector<Worker> workers = new Vector<Worker>();

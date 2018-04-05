@@ -20,10 +20,10 @@
  */
 package org.matthew.bork;
 
-import java.util.zip.CRC32;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.zip.CRC32;
 
 /**
  * Encrypts an underlying input stream.

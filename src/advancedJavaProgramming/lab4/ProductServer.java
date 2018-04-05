@@ -1,13 +1,7 @@
 package advancedJavaProgramming.lab4;
 
-/**
- * @version 1.20 2004-08-15
- * @author Cay Horstmann
- */
-
-import java.rmi.*;
-import java.rmi.server.*;
-import javax.naming.*;
+import javax.naming.Context;
+import javax.naming.InitialContext;
 
 /**
  * This server program instantiates two remote objects, registers them with the naming service, and

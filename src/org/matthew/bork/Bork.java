@@ -20,7 +20,6 @@
  */
 package org.matthew.bork;
 
-import java.util.Random;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,6 +30,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Random;
 
 /**
  * Bork encrypts/decrypts files using a stream cipher - currently only RC4 is implemented.

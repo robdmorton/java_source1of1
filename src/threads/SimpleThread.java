@@ -1,8 +1,9 @@
 package threads;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.Graphics;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
 
 public class SimpleThread extends JFrame implements Runnable {
   // Declare a Thread object - must pass in a reference to

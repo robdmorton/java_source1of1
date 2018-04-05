@@ -4,9 +4,8 @@ package rmiTest;
  * @version 1.00 1996-09-07
  * @author Cay Horstmann
  */
-
-import java.rmi.*;
-import java.rmi.server.*;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  * This is the implementation class for the remote product objects.

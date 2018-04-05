@@ -1,7 +1,5 @@
 package intermediateJavaProgramming.lab7.WOS3;
 
-import java.util.Set;
-
 public class game {
 
   public static void main(String[] args) {

@@ -13,8 +13,15 @@ package intermediateJavaProgramming.lab2;
  *         To change the template for this generated type comment go to Window>Preferences>Java>Code
  *         Generation>Code and Comments
  */
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.net.URLConnection;
 
 class ReadURL {
   public static void main(String args[]) throws IOException {

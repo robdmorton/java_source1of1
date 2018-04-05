@@ -1,13 +1,9 @@
 package rmiTest;
 
-/**
- * @version 1.10 2004-08-14
- * @author Cay Horstmann
- */
-
-import java.rmi.*;
-import java.rmi.server.*;
-import javax.naming.*;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NameClassPair;
+import javax.naming.NamingEnumeration;
 
 /**
  * This programs shows all RMI bindings.
