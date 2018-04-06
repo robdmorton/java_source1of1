@@ -62,13 +62,12 @@ public class HelloJNI {
       for (String word[] : helloWorld) {
         for (String letter : word) {
           toMorseCode(letter);
-          Thread.sleep(150);
+          Thread.sleep(50);
         }
-        Thread.sleep(350);
+        Thread.sleep(100);
       }
     } catch (Throwable t) {
     }
     TestUtility.printer("called native method(via JNA)...");
   }
 }
-
