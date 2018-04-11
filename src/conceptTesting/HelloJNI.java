@@ -62,9 +62,9 @@ public class HelloJNI {
       for (String word[] : helloWorld) {
         for (String letter : word) {
           toMorseCode(letter);
-          Thread.sleep(50);
+          Thread.sleep(100);
         }
-        Thread.sleep(100);
+        Thread.sleep(500);
       }
     } catch (Throwable t) {
     }
