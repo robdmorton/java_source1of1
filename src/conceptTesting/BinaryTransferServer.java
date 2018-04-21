@@ -1998,7 +1998,7 @@ public class BinaryTransferServer {
     // aBinXfrSvc.testGenerics();
 
     // closures/"funcptr" and lambda expressions test (JSE8)\
-    // aBinXfrSvc.testClosuresAndLambdaExpressions();
+    aBinXfrSvc.testClosuresAndLambdaExpressions();
 
     // static variable initialization java - done only once when class is loaded
     // aBinXfrSvc.testStaticVariableInitialization();
